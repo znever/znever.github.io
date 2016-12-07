@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>个人小结20161207</title>
+		<style type="text/css">
+			body{
+				background:url("http://image18.poco.cn/mypoco/myphoto/20161207/20/18416238120161207201105012.jpg?");
+				background-position:center 0; background-attachment: fixed;
+			}
+			.box{ width:1100px; height:600px; border:1px solid #DAF8FF; margin:50px auto 0; border-radius:10px;}
+			.leftbar,.rightbar{ width:545px; height:600px;}
+			.leftbar{float:left;}
+			.rightbar{float:right; }
+			h3,h4,li{ color:#d4faff;margin-left:20px;}
+			.verbar{width:1px; height:540px; background:#DAF8FF; float:left; margin:30px auto 0;}
+			p{ color:#d4faff; padding:0 20px; line-height: 30px;}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;">
+				<h3>JavaScript编码规范</h3>
+				<h4>通用命名规范</h4>
+				<ul>
+					<li>所有变量必须是有意义的英文，严厉禁止拼音；</li>
+					<li>变量命名采用小驼峰法（第一个单词首字母小写，其余单词首字母大写）；</li>
+					<li>变量允许使用公认英文缩写，例如nav；</li>
+					<li>常量必须所有单词大写，并且每个单词间加下划线；</li>
+					<li>类命名必须是大驼峰法（所有单词第一个字母均大写）；</li>
+					<li>私有类的变量属性成员，建议使用混合式命名，并在前面加上下下划线；</li>
+					<li>“on”只能用作事件的命名；</li>
+					<li>所有全局变量必须初始化；</li>
+					<li>保留字以及特有的dom属性不作为变量名。</li>
+				</ul>
+				<h4>变量命名规范：类型前缀+有意义的单词</h4>
+				<ul>
+					<li>字符串：sXXX，如：sNname；</li>
+					<li>数字：nXXX，如：nPage；</li>
+					<li>逻辑：bXXX，如：bChecked；</li>
+					<li>数组：aXXX，如：aList；</li>
+					<li>正则：rXXX，如：rDomain；</li>
+					<li>函数：fXXX，如：Getlist;</li>
+					<li>DOM节点：dXX，如：dDiv；</li>
+					<li>其他类型：oXXX，如：oButton；</li>
+					<li>特殊简写：小范围作用域临时变量，如函数内部变量或参数：o(Object)、e(Element)等；</li>
+					<li>循环变量：i、j、k以此类推。</li>
+				</ul>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+				<h3>运算符</h3>
+				<p>"="号用于赋值；</br>
+				+"号用于文本值或字符串变量加起来（连接起来）。</p>
+	<pre>
+		var a = +[];
+		console.log(a);
+		结果：0
+	</pre>
+	<pre>
+		var b = +[];
+		console.log(b);
+		结果：NaN
+	</pre>
+				
+				<h3 style="margin-top:60px;">JavaScript的数据类型</h3>
+				<ul>
+					<li>数字number;(浮点数不能用"=="进行判断，因为它是近似数，例：10个0.1相加的结果并不是1)</li>
+					<li>字符串string;</li>
+					<li>布尔型boolean(结果只有true或false)；</li>
+					<li>数组Array()；</li>
+					<li>对象Object()；</li>
+					<li>Null空</li>
+					<li>Underfined</li>
+				</ul>
+			</div>
+			
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+				<h4>for循环</h4>
+	<pre>
+	for(声明变量并赋值;表达式或赋值;表达式或赋值){}<br	/>
+	实例如下：
+	#box{ width:364px;}
+	#box div{
+		width:50px;
+		height:50px;
+		text-align:center;
+		line-height:50px;
+		float:left;
+		border:1px solid black;
+	}
+	var box = document.getElementById("box");
+	var str = "";
+	var strj;
+	for (var i = 0; i < 7; i++) {
+		for(var j = 0; j < 7; j++){
+		strj = 7*i+j+1-3;
+		if(strj <= 0 || strj >= 42){
+			strj = "";
+		}
+		str += "<"div">" + strj + "<"/div">";	
+		}
+	}
+	box.innerHTML = str;
+	
+	结果如右图显示：<br/>
+	<img src="http://image18.poco.cn/mypoco/myphoto/20161207/21/18416238120161207214747010.png?" 
+		style="width:200px;position:absolute;bottom:5px;right:100px;" alt="" />
+	</pre>
+				
+				
+				
+				
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+				<h3>函数</h3>
+				<ul>
+					<li>函数声明共有三种方式：</li><br/>
+					<li><code>函数声明: function foo(){}</code></li>
+					<li><code>表达式声明: var foo = function(){}</code></li>
+					<li><code>匿名声明: function(){}</code></li>
+				</ul>
+				<p>关于函数的调用，由于函数是“一等公民”，所以在调用时若其置于最上面也是可以调用到的。
+				还有调用的执行顺序是由上至下的。但是当同时调用表达式声明的函数和函数声明的函数时，表达
+				式函数的优先级大于后者。
+	<pre>
+		var foo = function(){
+			alert(0);
+		}
+		function foo(){
+			alert(111);
+		}
+		foo();
+					
+		结果显示：弹窗为0。
+	</pre>
+		<pre>匿名函数自调用：(function(){alert(0);})();</pre></p>
+	<p>匿名函数只能在其内部作用，外部是无法调用的。</p>
+			
+			</div>
+			
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;">
+				<!--<h3>JavaScript编码规范</h3>-->
+				<h4>eval()函数</h4>
+				<p>eval() 函数可计算某个字符串，并执行其中的的 JavaScript 代码。</p>
+				<p>实例如下</p>
+	<pre>
+		eval("x=10;y=20;document.write(x*y)");<br />	
+		其结果为：200
+	</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+			
+			</div>
+			
+		</div>
+	</body>
+</html>
