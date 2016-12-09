@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>个人小结20161206</title>
+		<style type="text/css">
+			body{
+				background:url("http://image18.poco.cn/mypoco/myphoto/20161208/13/18416238120161208134856010.jpg?");
+				background-position:center 0; background-attachment: fixed;
+			}
+			.box{ width:1100px; height:600px; border:1px solid #DAF8FF; margin:50px auto 0; border-radius:10px;}
+			.leftbar,.rightbar{ width:545px; height:600px;}
+			.leftbar{float:left;}
+			.rightbar{float:right; }
+			h4{ color:#e8feff;margin-left:20px;}
+			.verbar{width:1px; height:540px; background:#DAF8FF; float:left; margin:30px auto 0;}
+			p{ color:#00f0ff; padding:0 20px; line-height: 26px;}
+			pre,span{ color:#00f0ff;}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="leftbar">
+				<h4>JavaScript字符串声明</h4>
+<pre>
+	(1).  var str = "这里是字符串";
+	(2).  str = "这里是字符串";
+	(3).  var str1 = new String("这里是字符串");
+	(4).  str = new String("这里是字符串");
+</pre>
+
+<h4>字符串的操作</h4>
+<h4>字符串的长度</h4>
+<pre>
+	var str = "我是字符串 abcd!";
+	console.log(str.length);
+	
+	返回的结果：11 (一个汉字的长度为1，且一个空格所占长度也为1)
+</pre>
+<h4>字符串中常用方法</h4>		
+	<p>
+		1. indexOf()方法：<br />
+		功能：用来返回某个指定的字符串在这一字符串中“首次”出现的位置。
+		语法：<code>str.indexOf(searchvalue,fromindex)</code>
+		括号里的第一个参数是必需的，是指你要检索的字符串值。<br />
+		第二个参数是可选的“整数”参数，是指你从字符串中开始检索的位置。取值在（0 —— str.length-1）。
+		如果省略该参数，则将从字符串的第一个字符开始检索。<br />
+		注意：indexOf()方法检索时是区分大小写的。<br />
+		如果要检索的字符串的值没有找到，则返回-1。
+	</p>			
+				
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar">
+				<p>简单实例：</p>
+<pre>
+	var str = "Hello world!";
+	console.log(str.indexOf("o"));
+	结果是：4
+	
+	console.log(str.indexOf("o",5));
+	结果则为：7
+	
+	从上面演示代码中可以看出当需要找第二个字符"o"时，则
+	console.log(str.indexOf("o",str.indexOf("o")+1));
+</pre>
+	<p>
+		2. match()方法：<br />
+		功能：可以在一个字符串中找到指定的值，或找到一个或多个正则表达式的匹配。它返回的是匹配结果的数组。如果匹配不到，则返回的是null<br />
+		语法：<code>str.match(searchvalue)<br/>
+			必需参数，指定要检索的字符串值。
+		</code><br />
+			<code>str.match(regexp)<br/>
+				必需参数，规定要匹配的模式的RegExp对象。如果该参数不是RegExp对象，则需要首先把它传递给RegExp构造函数，
+				将其转换为RegExp对象。
+			</code><br />
+		<p style="margin:0;">简单实例：</p>
+<pre>
+	var str="Hello world!"
+	console.log(str.match("Hello"));	
+	结果：Hello
+	var str="Hello world!"
+	console.log(str.match("hello"));
+	结果：null
+</pre>
+		
+	</p>			
+			</div>
+			
+		</div>
+		
+		<div class="box">
+			<div class="leftbar">
+				<p>
+		3. substr()方法：<br />
+		功能：可以在一个字符串中找到从start下标开始的指定长度的字符<br />
+		语法：<code>str.substr(start,length)<br/>
+			第一个参数为必需参数，如果是负值，那么该检索方式将从字符串的尾部开始算起查找。也就是说，-1指的是字符串中的最后一个字符，
+			-2指的就是倒数第二个字符。<br />
+			第二个参数length为可选参数，指的是返回的长度。
+		</code><br />
+		<p style="margin:0;">简单实例：</p>
+<pre>
+	var str="Hello world!";
+	console.log(str.substr(2,6));
+	
+	结果：llo wo
+</pre>
+		
+	</p>			
+	<p>
+		4. substring()方法：<br />
+		功能：用于提取字符串中介于两个指定下标之间的字符。<br />
+		语法：<code>str.substring(start,stop)<br/>
+			第一个参数为必需参数，且为非负整数。<br />
+			第二个参数为可选参数，且为非负整数。如果省略该参数，那么返回的子串会一直到字符串的结尾。<br />
+			它的返回值是从start处到stop-1处的所有字符，其长度为stop-start。
+		</code><br />
+		<span>简单实例：</span>
+<pre>
+	var str="Hello world!";
+	console.log(str.substr(2,6));
+	结果：llo wo
+</pre>
+		
+	</p>			
+				
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar">
+	<p>
+		5. slice()方法：<br />
+		功能：提取字符串的某个部分，并以新的字符串返回被提取的部分。<br />
+		语法：<code>str.slice(start,end)<br/>
+			第一个参数为起始下标。如果是负值，则从字符串的尾部开始。
+			第二个参数为结尾下标。若未指定，则提取的字符串从起始下标一直到最后。<br />
+			它所返回的值是一个新的字符串，从start到end结束，但不包括end所在字符。
+		</code><br />
+		<p style="margin:0;">简单实例：</p>
+<pre>
+	var str="Hello happy world!";
+	console.log(str.slice(6));
+	结果：happy world!
+	
+	var str="Hello happy world!";
+	console.log(str.slice(6,11));
+	结果：happy
+</pre>
+		
+	</p>			
+	<p>
+		6. split()方法：<br />
+		功能：用于把一个字符串分割成字符串数组。<br />
+		语法：<code>str.slice(separator,hovmany)<br/>
+			第一个参数为必需参数。且为字符串或正则表达式，意思就是从该参数的地方进行分割。
+			第二个参数为可选参数，该参数是用来指定返回的数组的最大长度。<br />
+			它所返回的是一个字符串数组。
+		</code><br />
+		
+			</div>
+			
+		</div>
+		
+		<div class="box">
+			<div class="leftbar">
+				<p style="margin:0;">简单实例：</p>
+<pre>
+	var str = "[ti:The Fox][00:00.00] The Fox - Ylvis";
+	var arr = new Array();
+	var s1 = "",s2 = "";
+	arr = str.split("]")
+	console.log(arr[0].split("[")[1]);
+	console.log(arr[1].split("[")[1]);
+	s1 = arr[1].split("[")[1];
+	console.log(s1.split(":")[1]);
+	console.log(arr[2]);
+	s2 = arr[0].split("[")[1];
+	console.log(s2.split(":")[1]);
+	最后所得的结果：The Fox
+			00.00
+			 The Fox - Ylvis
+</pre>
+		
+	</p>					
+	<p>
+		7. replace()方法：<br />
+		功能：用于在字符串中用一些字符替换另一些字符，或者替换一个与正则表达式匹配的子串。<br />
+		语法：<code>str.replace(regexp/substr,replacement)<br/>
+			第一个参数为必需参数，规定子字符串或要替换的模式的RegExp对象。<br />
+			第二个参数为必需参数。一个字符串值。<br />
+			它的返回值是一个新的字符串。
+		</code><br />
+		<span>简单实例：</span>
+<pre>
+	var str="Visit Microsoft!";
+	console.log(str.replace(/Microsoft/, "W3School"));
+	
+	结果：Visit W3School!
+</pre>
+		
+	</p>			
+				
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar">
+	<p>
+		8. charAt()方法：<br />
+		功能：用于返回指定位置的字符。<br />
+		语法：<code>str.charAt(index)<br/>
+			index为必需参数。表示字符串中某个位置的字符。如果index的值不在0与str.length
+			之间，则该方法将返回的是一个“空字符串”。
+		</code><br />
+		<p style="margin:0;">简单实例：</p>
+<pre>
+	var str="Hello world!";
+	console.log(str.charAt(3));
+	结果：l
+</pre>
+		
+	</p>			
+		
+			</div>
+			
+		</div>
+		
+		<div class="box">
+			<div class="leftbar">
+				<h4>数组对象Array()</h4>
+				<p style="margin:0;">数组声明的几种方式：</p>
+<pre>
+	
+	var arr = ["1","3","6"];
+	var arr1 = [];
+	var arr2 = new Array();
+	var arr3 = new Array(3); //括号里的3为数组的长度，且数组为空
+	var arr4 = new Array(1,2,5) //此时括号的元素即为数组中的元素。
+</pre>
+<p>该如何判断某一对象是否是数组？<br />
+	<pre>
+	var arr = [];
+	Array.isArray(arr);
+	若是数组，则返回true，不是则返回false
+	</pre>
+</p>
+
+		<h4>数组中的常用方法：</h4>
+	</p>					
+	<p>
+		1. push()方法：<br />
+		功能：向数组的末尾添加一个或多个元素，并且会返回新的长度。<br />
+		语法：<code>str.push(newe1,newe2,...)<br/>
+			参数为必需参数，即要添加到数组中的元素。它所返回的并不是数组，而是数组的长度。
+		</code><br />
+		
+		
+	</p>			
+				
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar">
+	<p>
+		<span>简单实例：</span>
+<pre>
+	var arr = new Array(3);
+	arr[0] = "George";
+	arr[1] = "John";
+	arr[2] = "Thomas";
+
+	console.log(arr + "<"br /">");
+	console.log(arr.push("James") + "<"br /">");
+	console.log(arr);
+	
+	结果：George,John,Thomas
+	      4
+	      George,John,Thomas,James
+</pre>
+<p>
+		2. pop()方法：<br />
+		功能：用于删除并返回数组的最后一个元素。<br />
+		语法：<code>str.pop()<br/>
+			它所返回的是删除的那数组的最后一个元素。如果数组已经为空，则pop()不改变数组，并返回undefined值。
+		</code><br />
+		<p style="margin:0;">简单实例：</p>
+<pre>
+	var arr = new Array(3);
+	arr[0] = "George";
+	arr[1] = "John";
+	arr[2] = "Thomas";
+	console.log(arr.pop());
+	
+	结果：Thomas
+
+</pre>
+		
+	</p>			
+		
+			</div>
+			
+		</div>
+		
+		<div class="box">
+			<div class="leftbar">
+				<!--<h4>数组对象Array()</h4>-->
+				<p>
+		3. unshift()方法：<br />
+		功能：可向数组的开头添加一个或更多的元素，并返回新的“长度”。<br />
+		语法：<code>str.unshift(newe1,newe2,...)<br/>
+			参数为必需，是向数组中添加第一个元素。
+		</code><br />
+		<p style="margin:0;">简单实例：</p>
+<pre>
+	var arr = new Array();
+	arr[0] = "George";
+	arr[1] = "John";
+	arr[2] = "Thomas";
+
+	console.log(arr + "<"br /">");
+	console.log(arr.unshift("William") + "<"br /">");
+	console.log(arr);
+
+	结果：George,John,Thomas
+	     4
+	     William,George,John,Thomas
+
+</pre>
+		
+	</p>
+
+		<!--<h4>数组中的常用方法：</h4>-->
+	</p>					
+	<p>
+		4. shift()方法：<br />
+		功能：用于把数组的第一个元素从其中删除，并返回第一个元素的值。<br />
+		语法：<code>str.shift()<br/>
+			它返回的是数组原来的第一个值，也就是所删除的那个元素。
+			如果数组本身就是空的，那么shift()方法将不进行任何操作，返回undefined值。
+		</code><br />
+		
+		
+	</p>			
+				
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar">
+	<p>
+		<span>简单实例：</span>
+<pre>
+	var arr = new Array(3);
+	arr[0] = "George";
+	arr[1] = "John";
+	arr[2] = "Thomas";
+
+	console.log(arr + "<"br /">");
+	console.log(arr.shift() + "<"br /">");
+	console.log(arr);
+	
+	结果：George,John,Thomas
+	      George
+	      John,Thomas
+</pre>
+<p>
+		5. join()方法：<br />
+		功能：用于把数组中的所有元素放入一个字符串。元素是通过指定的分隔符进行分割的。<br />
+		语法：<code>str.join(separator)<br/>
+			参数为可选参数，指定要使用的分隔符。如果省略，则使用逗号作为分隔符。
+			它返回的是一个字符串。
+		</code><br />
+		<p style="margin:0;">简单实例：</p>
+<pre>
+	var arr = new Array(3);
+	arr[0] = "George";
+	arr[1] = "John";
+	arr[2] = "Thomas";
+	console.log(arr.join("."));
+	
+	结果：George.John.Thomas
+
+</pre>	
+</p>			
+			</div>
+			
+		</div>
+		
+		<div class="box">
+			<div class="leftbar">
+				<!--<h4>数组对象Array()</h4>-->
+				<p>
+		6. reverse()方法：<br />
+		功能：用于颠倒数组中元素的顺序。<br />
+		语法：<code>str.reverse()<br/>
+			该方法只是改变原来的数组，而不是创建新的数组。
+		</code><br />
+		<p style="margin:0;">简单实例：</p>
+<pre>
+	var arr = new Array();
+	arr[0] = "George";
+	arr[1] = "John";
+	arr[2] = "Thomas";
+
+	console.log(arr + "<"br /">");
+	console.log(arr.reverse());
+
+	结果：George,John,Thomas
+	     Thomas,John,George
+
+</pre>
+		
+	</p>
+
+		<!--<h4>数组中的常用方法：</h4>-->
+	</p>					
+	<p>
+		7. toString()方法：<br />
+		功能：把数组转换为字符串，并返回结果。<br />
+		语法：<code>str.toString()<br/>
+			它的返回值与没有参数的join()方法的字符串相同。
+		</code><br />
+	</p>				
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar">
+	<p>
+		<span>简单实例：</span>
+<pre>
+	var arr = new Array(3);
+	arr[0] = "George";
+	arr[1] = "John";
+	arr[2] = "Thomas";
+
+	console.log(arr.toString() );
+	
+	结果：George,John,Thomas
+
+</pre>
+<p>
+		8. sort()方法：<br />
+		功能：用于对数组的元素进行排序。<br />
+		语法：<code>str.sort(sortby)<br/>
+			参数为可选参数，是用来规定排序的顺序的，但必需是函数。
+		</code><br />
+		<p style="margin:0;">简单实例：</p>
+<pre>
+	var arr = new Array(6);
+	arr[0] = "10";
+	arr[1] = "5";
+	arr[2] = "40";
+	arr[3] = "25";
+	arr[4] = "1000";
+	arr[5] = "1";
+	
+	结果：1,10,1000,25,40,5
+
+</pre>	
+</p>			
+			</div>
+			
+		</div>
+		
+		<div class="box">
+			<div class="leftbar">
+				<!--<h4>数组对象Array()</h4>-->
+				<p>
+		9. forEach()方法：<br />
+		功能：对数组的每一个元素执行一次提供供的函数（回调函数），遍历一个数组。<br />
+		语法：<code>arr.forEach(function(element,index,array){})<br/>
+			currentValue(当前值)：数组中正在处理的当前元素。<br />
+			index(索引)：数组中正在处理的当前元素的索引。
+			array:正在应用forEach()数组
+		</code><br />
+		<p style="margin:0;">简单实例：</p>
+<pre>
+	function logArrayElements(element, index, array) {
+    console.log("a[" + index + "] = " + element);
+	}
+	[2, 5, 9].forEach(logArrayElements);
+
+	结果： a[0] = 2
+ 	       a[1] = 5
+	       a[2] = 9
+
+</pre>
+		
+	</p>
+
+		<!--<h4>数组中的常用方法：</h4>-->
+	</p>			
+	<h4>Object对象的声明</h4>
+	<p>
+<pre>
+	var obj = {};
+	var obj1 = {name:"张三",age:20};
+	var obj2 = new Object();
+</pre>
+		
+	</p>				
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar">
+	<p>
+		<h4>关于Object对象的访问</h4>
+		
+<pre>
+	1. console.log(obj1.name);
+		
+	结果:张三
+
+	2. console.log(obj1["name"]);
+		
+	结果:张三
+	
+	3. for(var i in obj1){
+		console.log(obj1[i]);
+	}
+	
+	结果：张三
+	      20
+</pre>
+
+			</div>
+			
+		</div>
+	</body>
+</html>
