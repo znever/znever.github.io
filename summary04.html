@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>个人小结20161209</title>
+		<style type="text/css">
+			body{
+				background:url("http://image18.poco.cn/mypoco/myphoto/20161211/21/18416238120161211210209047.jpg?");
+				background-position:center 0; background-attachment: fixed;
+			}
+			.box{ width:1100px; height:600px; border:1px solid #DAF8FF; margin:50px auto 0; border-radius:10px;}
+			.leftbar,.rightbar{ width:545px; height:600px;}
+			.leftbar{float:left;}
+			.rightbar{float:right; }
+			h3,h4,li{ color:#d4faff;margin-left:20px;}
+			.verbar{width:1px; height:540px; background:#DAF8FF; float:left; margin:30px auto 0;}
+			p{ color:#d4faff; padding:0 20px; line-height: 30px;}
+			pre{color:#00e1ff;}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;">
+				<h3>Date对象</h3>
+				<h4>创建Date对象</h4>
+<pre>
+	var myDate = new Date();
+	注释：Date对象会自动把当前的日期和时间保存为其初始值。
+	
+	1. Date()方法：
+		返回当天的日期和时间
+		
+	2. getFullYear()方法：
+		返回一个表示年份的4位数字。
+		obj.getFullYear();
+		
+	3. getMonth()方法：
+		返回表示月份的数字。
+		obj.getMonth();
+		它的返回值是一个0——11之间的整数。
+		
+	4. getDate()方法：
+		返回月份中的某一天。
+		obj.getDate();
+		
+		实例：
+		var birthday = new Date("July 21, 1983 01:15:00");
+		document.write(birthday.getDate());
+		
+		结果: 21
+		
+	5. getDay()方法：
+		返回一星期中的某一天的数字(0--6);
+		obj.getDay();
+		
+	6. getHours()方法：
+		返回时间的小时字段。(0--23之间的整数。)
+		obj.getHours();
+		
+
+</pre>			
+				
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+
+<pre>
+	7. getMinutes()方法：
+		返回时间的分钟字段。(0--59之间的一个整数。)
+		obj.getMinutes();
+		
+	8. getSeconds()方法：
+		返回时间的秒数。(0--59之间的一个整数。)
+		obj.getSeconds();
+		
+	9. getMilliseconds()方法：
+		返回时间的毫秒。(0 ~ 999之间的一个整数。)
+		obj.getMilliseconds();
+		
+	10. toString()方法：
+		把Date对象转换为字符串，并返回结果。(使用的是本地时间)
+		obj.toString();
+		
+	11. toTimeString()方法：
+		把Date对象的时间部分转换为字符串，并返回结果。
+		obj.toTimeString();
+		
+	12. toDateString()方法：
+		把Date对象的日期部分转换为字符串，并返回结果。
+		obj.toDateString();
+		
+		
+	实例：如何获取某个月有多少天？
+	var d = new Date();
+	var curMonthDays = new Date(d.getFullYear(),(d.getMonth()+1),0).getDate();
+	console.log(curMonthDays);
+</pre>
+				
+			</div>
+			
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+				<h4>Math()对象</h4>
+	<pre>
+	1. random()方法：
+		返回介于0 ~ 1 之间的一个随机数。
+		Math.random();
+		0.0 ~ 1.0 之间的一个伪随机数。
+		
+	2. ceil()方法：
+		可对一个数进行向上取整。
+		Math.ceil(x);
+		
+	3. floor()方法：
+		可对一个数进行向下取整。
+		Math.floor(x);
+		
+	4. round()方法：
+		把一个数字舍入为最接近的一个整数。
+		Math.round(x);
+		
+	5. max(x,y)方法：
+		返回x和y中最高值。
+		Math.max(x,y);
+		
+	6. min(x,y)方法：
+		返回x和y中的最小值。
+		Math.min(x,y);
+		
+	7. abs()方法：
+		返回某个数的绝对值。
+		Math.abs(x);
+		
+	8. sqrt()方法：
+		返回一个数的平方根。
+		Math.sqrt(x);
+	</pre>	
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<pre>
+	实例：如何获得某一段的随机数：
+	function getRandom(min,max){
+		return Math.random()*(max-min) + min;
+	}
+</pre>
+			
+			</div>
+			
+		</div>
+		
+		<!--<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;">
+				
+				<h4>eval()函数</h4>
+				<p>eval() 函数可计算某个字符串，并执行其中的的 JavaScript 代码。</p>
+				<p>实例如下</p>
+	<pre>
+		eval("x=10;y=20;document.write(x*y)");<br />	
+		其结果为：200
+	</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+			
+			</div>-->
+			
+		</div>
+	</body>
+</html>
