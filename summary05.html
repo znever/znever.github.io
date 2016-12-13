@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>个人小结20161212</title>
+		<style type="text/css">
+			body{
+				background:url("http://image18.poco.cn/mypoco/myphoto/20161211/21/18416238120161211210209047.jpg?");
+				background-position:center 0; background-attachment: fixed;
+			}
+			.box{ width:1100px; height:600px; border:1px solid #DAF8FF; margin:50px auto 0; border-radius:10px;}
+			.leftbar,.rightbar{ width:545px; height:600px;}
+			.leftbar{float:left;}
+			.rightbar{float:right; }
+			h3,h4,li{ color:#d4faff;margin-left:20px;}
+			.verbar{width:1px; height:540px; background:#DAF8FF; float:left; margin:30px auto 0;}
+			p{ color:#d4faff; padding:0 20px; line-height: 30px;}
+			pre{color:#00e1ff;}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;">
+				<h3>Event事件</h3>
+				<h4>节点事件</h4>
+<pre>
+	"<"p onclick="alert('节点事件')">我是p标签"<"/ p">"
+		(双引号加了是为了显示代码用的)
+</pre>
+			<h4>HTML DOM on事件</h4>
+<pre>
+	"<"p id="pp">我是p2"<"/ p">"
+		“<”script type="text/javascript">
+			var pp = document.getElementById("pp");
+			pp.onclick = function(){
+				alert("HTML DOM on事件");
+			}
+		“<”/script>
+</pre>
+<h4>HTML DOM W3C标准事件（浏览器兼容性）</h4>
+<pre>
+"<"p id="pp">我是p2"<"/ p">"
+	“<”script type="text/javascript">
+	var pp = document.getElementById("pp");
+		pp.addEventListener("click",clickHander);
+			function clickHander(e){
+			if(event || window.event){ //兼容性
+			var e = event.target || event.srcElement;
+			}
+			console.log(e.target);
+			alert("HTML DOM W3C标准事件");
+		 	}
+			
+		“<”/script>
+</pre>
+				
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<h4>点击加载图片</h4>
+<pre>
+	“<”p id="pp">
+			点击加载图片	
+		“<”/p>
+		“<”img id="img" />
+		“<”script>
+			var img = document.getElementById('img');
+			var pp = document.getElementById('pp');
+			var flag = true;
+			pp.addEventListener("click",function(){
+				if(flag){
+					img.setAttribute("src","img/01.jpg");
+				}else{
+					img.setAttribute("src","");
+				}
+				flag = !flag;
+			},false)
+		“<”/script>
+			
+</pre>
+			</div>
+			
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+				<h4>图片跟着鼠标走</h4>
+<pre>clientX属性：返回当事件被触发时，鼠标指针的水平坐标。
+clientY属性：返回当事件被触发时，鼠标指针的垂直坐标。</pre>
+<pre>
+	“<”p>鼠标X: “<”span id="sp1">“<”/span>“<”/p>
+		“<”p>鼠标Y: “<”span id="sp2">“<”/span>“<”/p>
+		“<”img src="img/01.gif" style="width:50px; 
+		height:50px; position:absolute; left:0; top:0;" />
+		
+	“<”script>
+		window.addEventListener("mousemove",moveHandle);
+		var sp1 = document.getElementById("sp1");
+		var sp2 = document.getElementById("sp2");
+		var img = document.getElementsByTagName('img');
+			
+		function moveHandle(e){
+			e.preventDefault();
+			sp1.innerText = e.clientX;
+			sp2.innerText = e.clientY;
+			img[0].style.left = e.clientX - img[0].width/2 + "px";
+			img[0].style.top = e.clientY - img[0].height/2 + "px";
+		}
+	“<”/script>
+
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<h4>获取手机验证码</h4>
+<pre>
+	“<”button id="btn">获取手机验证码“<”/button>
+		
+		“<”script>
+			var btn = document.getElementById('btn');
+			
+			btn.addEventListener("click",clickHander,false);
+			var t = 10;
+			
+			function clickHander(){
+				btn.innerHTML = t + "秒后重新获取";
+				btn.disabled = true;
+				siv1 = window.setInterval(updateTime,1000);
+			}
+			
+			function updateTime(){
+				btn.innerHTML = t + "秒后重新获取";
+				if(t <= 0){
+					if(siv1){
+						clearInterval(siv1);
+					}
+						t = 10;
+						btn.innerHTML = "获取手机验证码";
+						btn.disabled = false;
+					}
+					t--;
+				}
+			
+		“<”/script>
+
+</pre>
+		</div>	
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+				<h4>键盘按下事件、获取焦点</h4>
+<pre>
+	用户名：“<”input type="text" id="username" value=""/>
+		密码：“<”input type="text" />
+		“<”input type="button" id="iptTxt" value="登录" />
+		
+		“<”script>
+			var ipt = document.getElementById('iptTxt');
+			var uname = document.getElementById('username');
+			
+				uname.focus();
+			
+			window.onkeydown = function(e){
+
+				console.log(e.keyCode);
+				if(e.keyCode == 13){
+					alert("登录成功");
+				}
+			}
+		“<”/script>
+</pre>
+<h4>动态时间</h4>
+<pre>
+	“<”img src="" alt="" />
+		“<”img src="" alt="" />
+		“<”img src="" alt="" />
+		“<”img src="" alt="" />
+		“<”img src="" alt="" />
+		“<”img src="" alt="" />
+		“<”img src="" alt="" />
+		“<”img src="" alt="" />
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<pre>
+		“<”script>
+			var imgList = document.getElementsByTagName('img');
+			function animate(){
+			var arr = ["img/images/0.png",
+						"img/images/1.png",
+						"img/images/2.png",
+						"img/images/3.png",
+						"img/images/4.png",
+						"img/images/5.png",
+						"img/images/6.png",
+						"img/images/7.png",
+						"img/images/8.png",
+						"img/images/9.png",
+						"img/images/dot.png"];
+			
+			var d = new Date();
+			var hours = d.getHours();
+			var minutes = d.getMinutes();
+			var seconds = d.getSeconds();
+			
+			var a = parseInt(hours/10);
+			var b = hours%10;
+			var c = parseInt(minutes/10);
+			var d = minutes%10;
+			var e = parseInt(seconds/10);
+			var f = seconds%10;
+			
+			imgList[0].src = arr[a];
+			imgList[1].src = arr[b];
+			imgList[2].src = arr[10];
+			imgList[3].src = arr[c];
+			imgList[4].src = arr[d];
+			imgList[5].src = arr[10];
+			imgList[6].src = arr[e];
+			imgList[7].src = arr[f];
+		}
+			setInterval(animate,1000);
+		“<”/script>
+</pre>
+		</div>	
+		</div>
+	</body>
+</html>
