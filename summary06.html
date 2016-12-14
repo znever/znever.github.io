@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>个人小结20161213</title>
+		<style type="text/css">
+			body{
+				background:url("http://image18.poco.cn/mypoco/myphoto/20161211/21/18416238120161211210209047.jpg?");
+				background-position:center 0; background-attachment: fixed;
+			}
+			.box{ width:1100px; height:600px; border:1px solid #DAF8FF; margin:50px auto 0; border-radius:10px;}
+			.leftbar,.rightbar{ width:545px; height:600px;}
+			.leftbar{float:left;}
+			.rightbar{float:right; }
+			h3,h4,li{ color:#d4faff;margin-left:20px;}
+			.verbar{width:1px; height:540px; background:#DAF8FF; float:left; margin:30px auto 0;}
+			p{ color:#d4faff; padding:0 20px; line-height: 30px;}
+			pre{color:#00e1ff;}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;">
+				<h3>Function函数作用域</h3>
+				<!--<h4>节点事件</h4>-->
+				<p>
+					js的变量作用域是函数级的，在js里没有类似c语言的块级作用域。
+				</p>
+				<p>
+					js编程环境的顶级作用域是window对象下的范围，称为全局作用域，全局作用域中的变量称为全局变量。
+js函数内的变量无法在函数外面访问，在函数内却可以访问函数外的变量，函数内的变量称为局部变量。
+js函数可以嵌套，多个函数的层层嵌套构成了多个作用域的层层嵌套，这称为js的作用域链。
+				</p>
+				<p>
+					js作用域链的变量访问规则是：如果当前作用域内存在要访问的变量，则使用当前作用域的变量，
+					否则到上一层作用域内寻找，直到全局作用域，如果找不到，则该变量为未声明。
+				</p>
+				<p>
+					注意，变量的声明在代码解析期完成，如果当前作用域的变量的声明和赋值语句写在变量访问语句后面，
+					js函数会认为当前作用域已经存在要访问的变量不再向上级作用域查找，但是，由于变量的赋值发生的
+					代码运行期，访问的到变量将是undefined.
+				</p>
+		
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<h4>实例</h4>
+<pre>
+	var c = 1000;
+	function out(){
+	var a = 1;
+	var b = 2;
+	function fun(){
+	alert(a); //undefined
+	var a = 10;
+ 	alert(a); //10
+	alert(b); //2
+	alert(c); //1000
+	}
+	fun();
+	}
+	out(); 
+			
+</pre>
+			</div>
+			
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+				<h4>this</h4>
+<p>
+	this 是 执行时的环境，而不是声明时的环境
+</p>
+<pre>
+	function foo(){
+		function fun(){
+			(function(){
+				console.log(this);  //指window
+			})()
+		}
+		fun();
+		var b = 2;
+		
+	}
+	foo();
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<h4>prototype</h4>
+<p>向对象添加属性和方法</p>
+<pre>
+	function fun(){
+		this.c = 1;
+	}
+	foo.prototype.c = "nihao";
+	console.log(fun.c);
+
+</pre>
+		</div>	
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+				<h4>面向对象语言（js是基于对象的）</h4>
+<p>
+	一种面向对象语言需要向开发者提供四中基本能力：<br />
+	1.封装-把相关的信息（无论数据或方法）存储在对象中的能力<br />
+	2.聚集-把一个对象存储在另一个对象内的能力。<br />
+	3.继承-由另一个类（或多个类）得来类的属性和方法的能力<br />
+	4.多态-编写能力以多种方法运行的函数或方法的能力
+</p>
+
+<!--<h4>动态时间</h4>
+<pre>
+	“<”img src="" alt="" />
+		“<”img src="" alt="" />
+		“<”img src="" alt="" />
+		“<”img src="" alt="" />
+		“<”img src="" alt="" />
+		“<”img src="" alt="" />
+		“<”img src="" alt="" />
+		“<”img src="" alt="" />
+</pre>-->
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+
+		</div>	
+		</div>
+	</body>
+</html>
