@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>个人小结20161216</title>
+		<style type="text/css">
+			body{
+				background:url("http://image18.poco.cn/mypoco/myphoto/20161211/21/18416238120161211210209047.jpg?");
+				background-position:center 0; background-attachment: fixed;
+			}
+			.box{ width:1100px; height:600px; border:1px solid #DAF8FF; margin:50px auto 0; border-radius:10px;}
+			.leftbar,.rightbar{ width:545px; height:600px;}
+			.leftbar{float:left;}
+			.rightbar{float:right; }
+			h3,h4,li{ color:#d4faff;margin-left:20px;}
+			.verbar{width:1px; height:540px; background:#DAF8FF; float:left; margin:30px auto 0;}
+			p{ color:#d4faff; padding:0 20px; line-height: 30px;}
+			pre{color:#00e1ff;}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;">
+				<h3>周测总结</h3>
+				<!--<h4>节点事件</h4>-->
+				<p>
+				1. alter()属于window对象的方法
+				</p>
+				<p>
+				2. JavaScript函数默认返回的值是undefined。
+				</p>
+				<p>
+				3. setInterval在执行完一次代码之后，经过了那个固定的时间间隔，
+				它还会自动重复执行代码，而setTimeout只执行一次那段代码。
+				它们的指向是window
+				</p>
+<pre>
+	4. var a = 1;
+	function test(){
+		a++;
+		alert(a);
+		var a = 2;
+		alert(a);
+	}
+	test();
+	返回的结果分别是：
+</pre>
+				<!--<h4>浏览器兼容性</h4>-->
+<pre>
+	
+
+</pre>
+				
+		
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<!--<h3>XML</h3>-->
+计用来传输和存储数据。
+	HTML 被设计用来显示数据。
+</p>
+<pre>
+	1. XML 文档形成了一种树结构，它从“根部”开始，然后扩展到“枝叶”。
+	<?xml version="1.0">
+	“<”note>
+	“<”to>George“<”/to>
+	“<”from>John“<”/from“>”
+	“<”heading>Reminder“<”/heading“>”
+	“<”body>Don't forget the meeting!“<”/body“>”
+	“<”/note“>”
+		
+	第一行是 XML 声明。它定义 XML 的版本 (1.0) 
+	
+	
+	2. XML的语法规则
+	所有 XML 元素都须有关闭标签
+	在 XML 中，省略关闭标签是非法的。所有元素都必须有关闭标签。
+	XML 标签对大小写敏感。
+	XML 的属性值须加引号
+	
+	3. XML 命名规则
+	名称可以含字母、数字以及其他的字符 
+	名称不能以数字或者标点符号开始 
+	名称不能以字符 “xml”（或者 XML、Xml）开始 
+	名称不能包含空格
+
+	4. XML 属性
+	XML 属性必须加引号
+	如果属性值本身包含双引号，那么有必要使用单引号包围它。
+</pre>
+			</div>
+			
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<h3>SVG</h3>
+				<!--<h4>this</h4>-->
+<pre>
+	SVG 意为可缩放矢量图形（Scalable Vector Graphics）。
+	SVG 使用 XML 格式定义图像。
+	SVG 指可伸缩矢量图形 (Scalable Vector Graphics) 
+	SVG 用来定义用于网络的基于矢量的图形 
+	SVG 使用 XML 格式定义图形 
+	SVG 图像在放大或改变尺寸的情况下其图形质量不会有所损失 
+	SVG 是万维网联盟的标准 
+	SVG 与诸如 DOM 和 XSL 之类的 W3C 标准是一个整体 
+
+</pre>
+<h4>SVG形状</h4>
+<pre>
+	1. <rect />矩形
+	<rect> 标签可用来创建矩形，以及矩形的变种。
+	
+	“<”svg width="100%" height="100%" version="1.1">
+		
+	“<”rect width="300" height="100"
+		
+	style="fill:rgb(0,0,255);stroke-width:1;
+	
+	stroke:rgb(0,0,0)"/>
+	
+	“<”/svg>
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<pre>
+	2. <circle> 圆形
+
+	“<”svg width="100%" height="100%" version="1.1">
+
+	“<”circle cx="100" cy="50" r="40" stroke="black"
+		
+	stroke-width="2" fill="red"/>
+
+	“<”/svg>
+
+	//cx 和 cy 属性定义圆点的 x 和 y 坐标。如果省略 cx 和 cy，
+	圆的中心会被设置为 (0, 0)，  r 属性定义圆的半径。
+
+	
+	3. <ellipse> 椭圆
+	“<”svg width="100%" height="100%" version="1.1">
+
+	“<”ellipse cx="240" cy="100" rx="220" ry="30"
+	style="fill:yellow"/>
+
+	“<”ellipse cx="220" cy="100" rx="190" ry="20"
+	style="fill:white"/>
+
+	“<”/svg>
+		
+	cx 属性定义圆点的 x 坐标 
+	cy 属性定义圆点的 y 坐标 
+	rx 属性定义水平半径 
+	ry 属性定义垂直半径 
+
+
+</pre>
+		</div>	
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+<pre>
+	4. <line> 线条
+
+	“<”svg width="100%" height="100%" version="1.1">
+
+	“<”line x1="0" y1="0" x2="300" y2="300"
+	style="stroke:rgb(99,99,99);stroke-width:2"/>
+
+	“<”/svg>
+	
+	x1 属性在 x 轴定义线条的开始 
+	y1 属性在 y 轴定义线条的开始 
+	x2 属性在 x 轴定义线条的结束 
+	y2 属性在 y 轴定义线条的结束 
+
+	
+	5. <polygon> 多边形
+	“<”svg width="100%" height="100%" version="1.1">
+
+	“<”polygon points="220,100 300,210 170,250"
+	style="fill:#cccccc;
+	stroke:#000000;stroke-width:1"/>
+
+	“<”/svg>
+		
+	6. <polyline> 折线
+	“<”svg width="100%" height="100%" version="1.1">
+
+	“<”polyline points="0,0 0,20 20,20 20,40 40,40 40,60"
+	style="fill:white;stroke:red;stroke-width:2"/>
+
+	“<”/svg>
+
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+
+		</div>	
+		</div>
+	</body>
+</html>
