@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>个人小结20161219</title>
+		<style type="text/css">
+			body{
+				background:url("http://image18.poco.cn/mypoco/myphoto/20161211/21/18416238120161211210209047.jpg?");
+				background-position:center 0; background-attachment: fixed;
+			}
+			.box{ width:1100px; height:600px; border:1px solid #DAF8FF; margin:50px auto 0; border-radius:10px;}
+			.leftbar,.rightbar{ width:545px; height:600px;}
+			.leftbar{float:left;}
+			.rightbar{float:right; }
+			h3,h4,li{ color:#d4faff;margin-left:20px;}
+			.verbar{width:1px; height:540px; background:#DAF8FF; float:left; margin:30px auto 0;}
+			p{ color:#d4faff; padding:0 20px; line-height: 30px;}
+			pre{color:#00e1ff;}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;">
+				<h3>this</h3>
+				<!--<h4>节点事件</h4>-->
+			<p>
+				this是JavaScript语言的一个关键字。它代表函数运行时，自动生成的一个内部对象，
+				只能在函数内部使用。
+			</p>		
+<pre>
+	1、 全局指向 Object Window
+	var x = 2;  //如果去掉，则结果为undefined
+	function test(){
+		var x = 1; //如果把var去掉，则下面的返回值为1
+		console.log(this.x); // 2
+	}
+	test();
+	
+	
+	
+	2、作为对象方法的调用，这时this就指这个上级对象。
+	function test(){
+		x = 2;
+		console.log(this.x);
+	}
+		var o = {};
+		o.x = 1;
+		o.m = test;
+		o.m(); //返回值是 1，因为这时函数test给了对象o中的m,
+				调用o.m()时，this指的就是o
+</pre>
+
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<pre>
+	3、作为构造函数调用，所谓构造函数，就是通过这个函数生成一个
+	新对象(object)。这时，this就是这个新对象。
+	function test(){
+				
+		this.x = 1;
+	}
+	var o = new test();
+	console.log(o.x); //返回值为1
+	
+	
+	
+	4、apply调用
+	apply()是函数对象的一个方法，它的作用是改变函数的调用对象，
+	它的第一个参数表示改变后的调用这个函数的对象。因此，this指
+	的就是这第一个参数。
+	var x = 2;
+	function test(){
+		console.log(this.x);
+	}
+	var o = {};
+	o.x = 1;
+	o.m = test;
+	o.m.apply(); //返回值为2
+	
+	apply()的参数为空时，默认调用全局对象。
+	如果最后一行代码改为o.m.apply(o);时，返回值为 1 
+	这时的this指的就是对象o
+</pre>
+			</div>
+			
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<h3>prototype和_proto_</h3>
+<pre>
+	prototype是函数的一个属性（每个函数都有一个prototype属性）,这个属性是
+	一个指针，指向一个对象。它是显示修改对象的原型的属性。
+	_proto_是一个对象拥有的内置属性（请注意：prototype是函数的内置属性，
+	_proto_是对象的内置属性），是JS内部使用寻找原型链的属性。
+	
+	
+	new的过程：
+	var Person = function(){};
+	var p = new Person();
+	
+	上面过程可以拆分为一下三步：
+	（1）、var p = {};
+	（2）、p._proto_ = Person.prototype;
+	（3）、Person.call(p);//初始化p
+	
+	实例：
+	var Person = function(){};
+	Person.prototype.sayName = function(){
+		alert("Hello World!");
+	};
+	
+	Person.prototype.age = 25;
+	var p = new Person();
+	p.sayName();
+	
+	p是一个引用指向Person的对象。我们在Person的原型上定义了一个
+	sayName方法和age属性，当我们执行p.age时，会先在this的内部查
+	找（也就是构造函数内部），如果没有找到然后再沿着原型链向上追溯。
+</pre>
+
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+
+		</div>	
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+
+		</div>	
+		</div>
+	</body>
+</html>
