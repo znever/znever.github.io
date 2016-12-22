@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>个人小结20161220</title>
+		<style type="text/css">
+			body{
+				background:url("http://image18.poco.cn/mypoco/myphoto/20161211/21/18416238120161211210209047.jpg?");
+				background-position:center 0; background-attachment: fixed;
+			}
+			.box{ width:1100px; height:600px; border:1px solid #DAF8FF; margin:50px auto 0; border-radius:10px;}
+			.leftbar,.rightbar{ width:545px; height:600px;}
+			.leftbar{float:left;}
+			.rightbar{float:right; }
+			h3,h4,li{ color:#d4faff;margin-left:20px;}
+			.verbar{width:1px; height:540px; background:#DAF8FF; float:left; margin:30px auto 0;}
+			p{ color:#d4faff; padding:0 20px; line-height: 30px;}
+			pre{color:#00e1ff;}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;">
+				<h3>html5 video</h3>
+				<!--<h4>节点事件</h4>-->
+			<p>
+				video 对象的部分属性和方法
+			</p>		
+<pre>
+src: 设置或返回音频/视频元素的当前来源
+autoplay: 设置或返回是否在加载完成后随即播放音频/视频
+buffered: 返回表示音频/视频已缓冲的TimeRanges对象
+	
+var tRangs = videos.buffered;	//返回表示视频已缓冲部分的 TimeRanges 对象。
+var tbuffed = tRangs.end(tRangs.length - 1);
+var curBuff = tbuffed / totalTime * 600;
+buffBar.style.width = curBuff + "px";
+
+controls: 设置或返回音频/视频是否显示控件(比如播放/暂停等)
+currentTime: 设置或返回音频/视频中的当前播放位置(以秒计)
+defaultMuted: 设置或返回音频/视频默认是否静音
+duration: 返回当前音频/视频的长度(以秒计)
+ended: 返回音频/视频的播放是否已结束
+loop: 设置或返回音频/视频是否应在结束时重新播放
+muted: 设置或返回音频/视频是否静音
+paused: 设置或返回音频/视频是否暂停
+played: 返回表示音频/视频已播放部分的TimeRanges对象
+textTracks: 返回表示可用文本轨道的TextTrackList对象
+videoTracks: 返回表示可用视频轨道的VideoTrackList对象
+volume: 设置或返回音频/视频的音量
+</pre>
+
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<pre>
+	播放:
+	videos.play();
+	
+	暂停:
+	videos.pause();
+	
+	获取播放进度:
+	var whereBar = videos.currrentTime();
+	
+	设置播放进度:
+	videos.currentTime(200);
+	
+	视频的持续时间，加载完成视频才可以知道视频的时长，
+	且在flash情况下无效
+	var longTime = videos.duration();
+	
+	缓冲:
+	var beBuff = videos.buffered();
+	
+	声音大小(0 -- 1之间)
+	var loud = videos.volume();
+	
+	设置声音大小:
+	videos.volume(0.5);
+	
+	取得视频的宽度:
+	var wid = videos.width();
+	
+	设置宽度:
+	videos.width(600);
+	
+	取得高度:
+	var heig = videos.height();
+	
+	设置高度:
+	videos.height(300);
+</pre>
+			</div>
+			
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+<!--				<h3>prototype和_proto_</h3>-->
+<pre>
+	宽高一起设置:
+	videos.size(600,300);
+	
+	设置全屏:
+	videos.requestFullscreen();//注意，不同的浏览器screen的“S”大小写不一样
+	
+	退出全屏:
+	videos.exitFullscreen();
+</pre>
+
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+
+		</div>	
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+
+		</div>	
+		</div>
+	</body>
+</html>
