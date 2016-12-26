@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>个人小结20161223</title>
+		<style type="text/css">
+			body{
+				background:url("http://image18.poco.cn/mypoco/myphoto/20161211/21/18416238120161211210209047.jpg?");
+				background-position:center 0; background-attachment: fixed;
+			}
+			.box{ width:1100px; height:600px; border:1px solid #DAF8FF; margin:50px auto 0; border-radius:10px;}
+			.leftbar,.rightbar{ width:545px; height:600px;}
+			.leftbar{float:left;}
+			.rightbar{float:right; }
+			h3,h4,li{ color:#d4faff;margin-left:20px;}
+			.verbar{width:1px; height:540px; background:#DAF8FF; float:left; margin:30px auto 0;}
+			p{ color:#d4faff; padding:0 20px; line-height: 30px;}
+			pre{color:#00e1ff;}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;">
+				<!--<h3>html5 video</h3>-->
+				<h4>设计模式</h4>
+			<p>
+				设计模式是一套被反复使用、多数人知晓的、经过分类编目的代码设计经验的总结。
+				使用设计模式是为了可重用代码、让代码更容易被他人理解、保证代码可靠性。
+			</p>	
+			<p>
+				观察者模式（有时又被称为发布（publish ）-订阅（Subscribe）模式、模型-视图
+				（View）模式、源-收听者(Listener)模式或从属者模式）是软件设计模式的一种。
+				在此种模式中，一个目标物件管理所有相依于它的观察者物件，并且在它本身的状态
+				改变时主动发出通知。这通常透过呼叫各观察者所提供的方法来实现。此种模式通常
+				被用来实现事件处理系统。
+			</p>
+			
+			
+
+
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+				<h4>浅拷贝和深拷贝</h4>
+<p>
+	浅拷贝是指源对象与拷贝对象共用一份实体，仅仅是引用的变量不同（名称不同）。
+	对其中任何一个对象的改动都会影响另外一个对象。举个例子，一个人一开始叫张三，
+	后来改名叫李四了，可是还是同一个人，不管是张三缺胳膊少腿还是李四缺胳膊少腿，
+	都是这个人倒霉。
+</p>
+<p>
+	深拷贝是指源对象与拷贝对象互相独立，其中任何一个对象的改动都不会对另外一个对象
+	造成影响。举个例子，一个人名叫张三，后来用他克隆（假设法律允许）了另外一个人，
+	叫李四，不管是张三缺胳膊少腿还是李四缺胳膊少腿都不会影响另外一个人。
+</p>
+<h4>浅拷贝实例：</h4>
+
+<pre>
+	var obj = {str:"你好，对象",arr:[1,2,3]};
+			var objCopy = copyObject(obj);
+			function copyObject(_obj){
+				var temp = {};
+				for(var p in _obj){
+					if(_obj.hasOwnProperty(p)){
+						temp[p] = obj[p];
+					}
+				}
+				return temp;
+			}
+			console.log(objCopy.arr[0]);
+</pre>
+
+			</div>
+			
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+<!--				<h3>prototype和_proto_</h3>-->
+<!--<h4>向服务器发送请求</h4>-->
+<!--<pre>
+	xhr.open("GET","files/ajax.json",true);
+	xhr.send();
+	
+	open(method,url,async)
+	规定请求的类型、URL以及是否异步处理请求。
+	method:请求的类型，GET或POST
+	URL:文件在服务器上的位置
+	async:true(异步)或false(同步)
+	
+	send(string)
+	将请求发送到服务器
+	string:仅用于POST请求
+</pre>
+<p>
+	在大部分情况下都用GET，因为GET更简单也更快<br />
+	但在以下情况中，请使用POST请求：<br />
+	(1)无法使用缓存文件（更新服务器上的文件或数据库）<br />
+	(2)向服务器发送大量数据(POST没有数据量限制) <br />
+	(3)发送包含未知字符的用户输入时，POST比GET更稳定也更可靠
+	
+</p>-->
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<!--<h4>服务器响应</h4>-->
+<!--<p>
+	如需获得来自服务器的响应,则使用XMLHttpRequest对象的responseText 或
+	responseXML属性。
+</p>
+<pre>
+	responseText : 获得字符串形式的响应数据。
+	
+	document.getElementById("div").innerHTML = xhr.responseText;
+	
+	responseXML ： 获得XML形式的响应数据。
+</pre>
+<h4>onreadystatechange事件</h4>-->
+<!--<p>
+	每当readyState改变时，就会触发onreadystatechange事件。
+	readyState属性存有XMLHttpRequest的状态信息。
+</p>
+<pre>
+	onreadystatechange : 存储函数（或函数名），每当readyState属性改变时，
+	就会调用该函数。
+	
+	readyState : 存有XMLHttpRequest的状态。从0到4发生变化。
+	0 ： 请求未初始化
+	1 ： 服务器连接已建立
+	2 ： 请求已接收
+	3 ： 请求处理中
+	4 ： 请求已完成，且响应已就绪
+	
+	
+	status :
+	200 : "OK"
+	404 : 未找到页面
+</pre>-->
+		</div>	
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+<!--<pre>
+	当readyState等于4且状态为200时，表示响应已就绪：
+	xhr.onreadystatechange = function(){
+		if(xhr.readyState == 4 && xhr.status == 200){
+		document.getElementById("div").innerHTML = xhr.responseText;
+		}
+	}
+</pre>-->
+<!--<h4>JSON</h4>
+<p>
+	JSON:JavaScript对象字面量（JavaScript Object Notation）<br />
+	JSON是存储和交换文本信息的语法。类似XML. <br />
+	JSON比XML更小、更快、更易解析
+</p>-->
+<!--<pre>
+	JSON语法是JavaScript语法的子集。
+	数据在名称/值对中
+	数据由逗号分隔
+	花括号保存对象
+	方括号保存数组
+</pre>-->
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<!--<pre>
+	[
+				{
+					"name": "张三",
+					"sex": "男",
+					"age": "20",
+					"phoneNumber": "110120130140",
+					"university": "浙江大学",
+					"major": "历史专业",
+					"college": "淘宝学院",
+					"入学年份": "1998"
+				},
+				{
+					"name": "李四",
+					"sex": "女",
+					"age": "10",
+					"phoneNumber": "190120030140",
+					"university": "杭州大学",
+					"major": "软件工程",
+					"college": "阿里学院",
+					"入学年份": "1989"
+				},
+				{
+					"name": "贾轩",
+					"sex": "男",
+					"age": "29",
+					"phoneNumber": "1234320140",
+					"university": "温州大学",
+					"major": "电子信息工程",
+					"college": "职业学院",
+					"入学年份": "1967"
+				}
+			]
+</pre>-->
+		</div>	
+		</div>
+	</body>
+</html>
