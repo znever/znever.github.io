@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>个人小结20161226</title>
+		<style type="text/css">
+			body{
+				background:url("http://image18.poco.cn/mypoco/myphoto/20161211/21/18416238120161211210209047.jpg?");
+				background-position:center 0; background-attachment: fixed;
+			}
+			.box{ width:1100px; height:600px; border:1px solid #DAF8FF; margin:50px auto 0; border-radius:10px;}
+			.leftbar,.rightbar{ width:545px; height:600px;}
+			.leftbar{float:left;}
+			.rightbar{float:right; }
+			h3,h4,li{ color:#d4faff;margin-left:20px;}
+			.verbar{width:1px; height:540px; background:#DAF8FF; float:left; margin:30px auto 0;}
+			p{ color:#d4faff; padding:0 20px; line-height: 30px;}
+			pre{color:#00e1ff;}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;">
+				<!--<h3>html5 video</h3>-->
+				<h4>jQuery</h4>
+			<p>
+				jQuery是一个快速、简洁的JavaScript框架，jQuery设计的宗旨是“write Less,Do More”,
+				即倡导写更少的代码，做更多的事情。它封装JavaScript常用的功能代码，提供一种简便的JavaScript
+				设计模式，优化HTML文档操作、事件处理、动画设计和Ajax交互。
+			</p>	
+			<p>
+				代码量减少，兼容性更好，动画效果，其他（方法多）
+			</p>
+			<p>
+				$(document).ready()是个什么函数？为什么要用它？<br />
+				ready()函数用于在文档进入ready状态时执行代码。当DOM完全加载(例如
+				HTML被完全解析，DOM树构建完成时)，jQuery允许你执行代码。<br />
+				使用$(document).ready()的最大好处在于它适用于所有浏览器，jQuery
+				帮你解决了跨浏览器的问题。
+			</p>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+				<h4>window.onload和$(document).ready()有何不同？</h4>
+<p>
+	window.onload和$(document).ready()的不同之处在于前者要等待DOM被创建还要等到
+	包括大型图片、音频、视频在内的所有外部资源都完全加载。如果加载图片和媒体内容
+	花费了大量时间，用户就会感受到定义在window.onload事件上的代码执行时有明显的
+	延迟。
+</p>
+<p>
+	而$(document).ready()函数只需要对DOM树的等待，无需对图像或外部资源加载等待，从而执行起来更快。
+	使用$(document).ready()的另一个优势是你可以在网页中多次使用它浏览器会按它们在HTMl页面里出现的
+	顺序执行，相反对于onload技术而言，只能在单一函数里使用。
+</p>
+<h4></h4>
+
+<pre>
+	
+</pre>
+
+			</div>
+			
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>prototype和_proto_</h3>-->
+<h4>jQuery获得option的值和对option进行操作</h4>
+<pre>
+	//为select添加事件，当选择其中一项时触发
+	$("#select_id").change(function(){});
+	
+	//获取select已经默认选择的Text
+	var checkText = $("#select_id").find("option:selected").text();
+	
+	//获取select选择的value值
+	var checkValue = $("#select_id").val();
+	
+	//获取select选择的索引值
+	var checkIndex = $("#select_id").get(0).selectedIndex;
+	
+	//获取select最大的索引值
+	var maxIndex = $("#select_id option:last").attr("index");
+	
+	
+	
+	
+	//设置select索引值为1的选项中
+	 $("#select_id").get(0).selectedIndex = 1;
+	 
+	 //设置select的value值为4的选项中
+	  $("#select_id").val(4);
+	  
+	  //设置select的Text值为jQuery的选项中,
+	  attr()方法用来设置或返回被选元素的属性值。
+	   $("#select_id option[text='jQuery']").attr("selected",true);
+</pre>
+
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<pre>
+	//为select追加一个option（下拉项）
+	 $("#select_id").append("<"option value="value">Text"<"/option>");
+	 	
+	//为select插入一个option(第一个位置)
+	 $("#select_id").prepend("<"option value='0'>请选择"<"/option>");
+	 	
+	//删除select中索引值最大的option(最后一个)
+	 $("#select_id "option":last").remove();//option中的引号是多余的
+	 
+	//删除select中索引值为0的option(第一个)
+	 $("#select_id option[index='0']").remove();
+	 
+	//删除select中value='3'的option
+	 $("#select_id option[value='3']").remove();
+	 
+	///删除select中Text='4'的option
+	 $("#select_id option[text='4']").remove();
+</pre>
+		</div>	
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+
+<h4>jQuery选择器</h4>
+<pre>
+	1、标签选择器（也称元素选择器）
+	格式：$("element");
+	例: $("div")
+	
+	2、ID选择器
+	用于获取某个具有ID属性的元素
+	格式: $("idName")
+	例： $("#box")
+	
+	3、class选择器
+	用于获取某个具有class属性的元素
+	格式：$("className")
+	例: $(".box").css("background","red");
+	
+	4、通配选择器
+	用于匹配选择所有元素
+	格式：$("*")
+	例: $("*").css("color","red");
+	
+	5、群组选择器
+	用于选择所有指定的选择器组合的结果
+	格式：$("selector1,selector2,selector3...selectorN")
+	例: $("div,span,p");
+	
+	6、子元素选择器
+	用于在给定父元素下查找其下面的所有子元素
+	格式：$("parent>child")
+	例: $("form>input")//匹配form表单中所有的子级input元素
+	
+	7、后代选择器
+	用于在给定的祖先元素下匹配所有的后代元素
+	格式: $("ancestor descendant")
+	例：$("form input")//查找form元素的后代元素中的input的标记
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<pre>
+	8、紧邻同辈选择器
+	用于匹配所有紧接在某元素后的第一个元素
+	格式: $("prev+next")
+	例: $("div+span")//匹配所有跟在div后的span元素
+	
+	9、相邻同辈选择器
+	用于匹配某元素后面的所欲同辈元素
+	格式：$("prev~siblings")
+	例: $("input~p")
+	
+	10、input选择器
+	用于选择所有input,textareaselect,button元素
+	格式: $(":input")
+	
+	11、text选择器
+	用于选择所有单行文本框(< type="text"/>)
+	格式: $(":text")
+	
+	12、password选择器
+	用于选择所有密码框(< type="password"/>)
+	格式: $(":password")
+	
+	13、radio选择器
+	用于选择所有单选按钮(< type="radio"/>)
+	格式: $(":radio")
+	
+	14、checkbox选择器
+	用于选择所有复选框(< type="checkbox"/>)
+	格式: $(":checkbox")
+
+	15、file选择器
+	用于选择所有文件域(< type="file"/>)
+	格式: $(":file")
+	
+	16、image选择器
+	用于选择所有图像域(< type="image"/>)
+	格式: $(":image")
+</pre>
+		</div>	
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+
+<!--<h4>jQuery选择器</h4>-->
+<pre>
+	17、hidden选择器
+	用于选择所有不可见元素(< type="hidden"/>)
+	格式：$(":hidden");
+	
+	18、button选择器
+	用于选择所有按钮(< type="button"/>)
+	格式: $(":button")
+	
+	19、submit选择器
+	用于选择所有提交按钮(< type="submit"/>)
+	格式：$(":submit")
+	
+	20、reset选择器
+	用于选择所有重置按钮(< type="reset"/>)
+	格式：$(":reset")
+	
+	21、first选择器
+	用于对当前jQuery集合进行过滤并选择出第一个匹配元素
+	格式：$(":selector:first")
+	例: $("td:first").css("background","red");
+	//将第一列的背景颜色设置为红色
+	
+	22、last选择器
+	用于对当前jQuery集合进行过滤并选择出最后一个匹配元素
+	格式：$(":selector:last")
+	
+	23、odd选择器
+	用于选择索引为奇数(从0开始计数)的所有元素
+	格式：$(":selector:odd")
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<pre>
+	24、even选择器
+	用于选择索引为偶数(从0开始计数)的所有元素
+	格式：$(":selector:even")
+	
+	25、eq()选择器
+	用于从匹配的集合中选择索引等于给定值的元素
+	格式：$(":selector:eq(index)")
+	
+	26、gt()选择器
+	用于从匹配的集合中选择索引大于给定值的所有元素
+	格式：$(":selector:gt(index)")
+	
+	27、lt()选择器
+	用于从匹配的集合中选择索引小于给定值的所有元素
+	格式：$(":selector:lt(index)")
+	
+	28、not()选择器
+	用于从匹配的集合中去除与给定选择器匹配的元素
+	格式：$(":selector1:not(selector2)")
+	例: $("td:not(:first,:last)")
+	
+	29、header()选择器
+	用于选择所有诸如h1,h2,h3之类的标题元素
+	格式：$(":header")
+	
+	30、animated()选择器
+	用于选择所有正在执行动画效果的元素
+	格式：$("selector:animated")
+
+	31、contains()选择器
+	用于选择包含给定文本的所有元素
+	格式：$("selector:contains(text)")
+	
+	32、has()选择器
+	用于选择包含给定子元素的元素
+	格式：$("selector1:has(selector2)")
+</pre>
+		</div>	
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+
+<!--<h4>jQuery选择器</h4>-->
+<pre>
+	33、empty()选择器
+	用于选择不包含子元素或者文本的所有空元素
+	格式：$("selector:empty")
+	
+	34、parent()选择器
+	用于选择包含子元素或者文本的所有空元素,与:empty相反
+	格式：$("selector:parent")
+	
+	35、parent()包含属性选择器
+	用于选择包含给定属性的所有元素
+	格式：$("selector[attribute]")
+	例: $("div[id]")//从文档中选择包含id属性的div元素
+	
+	
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<pre>
+	
+</pre>
+		</div>	
+		</div>
+	</body>
+</html>
