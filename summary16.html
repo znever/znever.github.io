@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>个人小结20161228</title>
+		<style type="text/css">
+			body{
+				background:url("http://image18.poco.cn/mypoco/myphoto/20161211/21/18416238120161211210209047.jpg?");
+				background-position:center 0; background-attachment: fixed;
+			}
+			.box{ width:1100px; height:600px; border:1px solid #DAF8FF; margin:50px auto 0; border-radius:10px;}
+			.leftbar,.rightbar{ width:545px; height:600px;}
+			.leftbar{float:left;}
+			.rightbar{float:right; }
+			h3,h4,li{ color:#d4faff;margin-left:20px;}
+			.verbar{width:1px; height:540px; background:#DAF8FF; float:left; margin:30px auto 0;}
+			p{ color:#d4faff; padding:0 20px; line-height: 30px;}
+			pre{color:#00e1ff;}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;">
+				<!--<h3>html5 video</h3>-->
+				<h4>AJAX数据获取及查询</h4>
+<pre>
+$(document).ready(function(){
+	$("input").click(function(){
+		var _data = {};
+		_data.pageNum = 1;
+		_data.pageSize = 20;
+		
+		var $userN = $("#username").val();
+		if($userN != ""){
+			_data.name = $userN;
+		}
+		
+		var $phone = $("#phone").val();
+		if($phone != ""){
+			_data.mobile = $phone;
+		}
+		
+		var $college = $("#college").val();
+			if($college != ""){
+			_data.college = $college;
+		}
+		
+		$.ajax({
+			type:"get",
+			url:"http://www.hemijiaoyu.com/service/searchApply",
+			dataType:"JSON",
+			data:_data,
+			success:function(msg){
+				var arr = msg.list;
+				var str = "";
+				for(var i = 0; i < arr.length; i++){
+					str += "<tr id=" + i + ">";
+					var obj = arr[i];		
+					for(var j in arr[i]){
+									
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<h4></h4>
+<pre>
+if(j != "homeTel"){
+	str += "<"td style='border-top:1px solid #666;
+		border-right:none;border-left:none;height:40px;
+	text-align:center;'>" + obj[j] + "<"/td>";
+						}
+									
+					}
+					str += "<""/tr>";			
+				}
+$("#tbd").html(str);
+		$("tr").dblclick(function(e){
+		$("#mask").show();
+								
+		var i = e.currentTarget.id;
+		$("#name").val(arr[i].name);
+		$("#sex").val(arr[i].sex);
+		$("#birth").val(arr[i].birthday);
+		$("#mobile").val(arr[i].mobile);
+		$("#political").val(arr[i].political);
+		$("#qq").val(arr[i].qq);
+		$("#college").val(arr[i].college);
+		$("#faculty").val(arr[i].faculty);
+		$("#major").val(arr[i].major);
+		$("#father").val(arr[i].fatherName);
+		$("#fatherMobile").val(arr[i].fatherMobile);
+		$("#mother").val(arr[i].matherName);
+		$("#motherMobile").val(arr[i].matherMobile);
+		$("#address").val(arr[i].homeAddress);
+		$("#information").val(arr[i].source);
+		$("#majorDes").val(arr[i].majorMemo);
+		$("#selfDes").val(arr[i].selfMemo);
+		console.log(arr[i]);
+		});
+		$("#cha").click(function(){
+		$("#mask").hide();
+		});
+		},
+		error:function(error){
+			console.log("错误:" + error);
+						}
+					});
+</pre>
+
+			</div>
+			
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>prototype和_proto_</h3>-->
+<pre>
+	主要学会应用chrom浏览器进行调试
+	
+	获取什么，先知道它返回的是什么。
+	
+	
+	合并table边框：
+	border-collapse:collapse;
+	
+	textarea设置固定宽高，不让自行改变
+	resize:none
+</pre>
+
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<pre>
+
+</pre>
+		</div>	
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+
+<!--<h4>jQuery选择器</h4>-->
+<pre>
+
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<pre>
+
+</pre>
+		</div>	
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+<!--<h4>jQuery选择器</h4>-->
+<pre>
+
+	
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<pre>
+
+</pre>
+		</div>	
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+
+<!--<h4>jQuery选择器</h4>-->
+<pre>
+
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<pre>
+
+
+
+</pre>
+		</div>	
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+
+<!--<h4>jQuery选择器</h4>-->
+<pre>
+
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<pre>
+
+</pre>
+		</div>	
+		</div>
+	</body>
+</html>
