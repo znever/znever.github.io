@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>个人小结20161227</title>
+		<style type="text/css">
+			body{
+				background:url("http://image18.poco.cn/mypoco/myphoto/20161211/21/18416238120161211210209047.jpg?");
+				background-position:center 0; background-attachment: fixed;
+			}
+			.box{ width:1100px; height:600px; border:1px solid #DAF8FF; margin:50px auto 0; border-radius:10px;}
+			.leftbar,.rightbar{ width:545px; height:600px;}
+			.leftbar{float:left;}
+			.rightbar{float:right; }
+			h3,h4,li{ color:#d4faff;margin-left:20px;}
+			.verbar{width:1px; height:540px; background:#DAF8FF; float:left; margin:30px auto 0;}
+			p{ color:#d4faff; padding:0 20px; line-height: 30px;}
+			pre{color:#00e1ff;}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;">
+				<!--<h3>html5 video</h3>-->
+				<!--<h4>jQuery</h4>-->
+			<p>
+				原生JS获取的是元素，而jQuery获取的是数组。
+			</p>	
+<pre>
+1/ attr()
+用于设置或返回当前对象所匹配的元素的属性值。
+
+用法一：jQueryObject.attr(attributeName [,value] )
+
+设置或返回制定属性attributeName的值。
+如果有value参数，则表示设置attributeName的值为value。
+如果没有value参数，则表示返回attributeName的值。
+
+参数value还可以是函数，
+attr()将根据匹配的所有元素遍历执行该参数，
+函数中的this指针将指向对应的DOM元素。
+
+attr()还会为函数传入两个参数：第一个参数就是该元素在匹配元素中的索引，
+第二个参数就是该元素attributeName属性当前的值。
+
+
+用法二：jQueryObject.attr( object )
+以对象形式同时设置任意多个属性的值。
+对象object的每个属性对应attributeName，属性的值对应value
+
+注意：
+attr()函数的所有“设置属性”操作针对的是当前jQuery对象所匹配的每一个元素。
+而所有“读取属性”的操作只针对第一个匹配的元素。
+
+
+2/ removeAttr()
+用于移除当前jQuery对象所匹配的每一个元素节点上制定的属性。
+
+jQueryObject.removeAttr( attributeNames )
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<h4></h4>
+<pre>
+3/ attr()和prop()的区别
+
+首先，在jQuery中，attr()函数和prop()函数都用于设置或获取指定的属性，
+他们的参数和用法也几乎完全相同。
+
+操作对象不同：
+attribute表示HTML文档节点的属性，property表示JS对象的属性。
+在jQuery中，prop()函数的设计目标是用于设置或获取指定DOM元素上的属性；
+attr()函数的设计目标是用于设置或获取指定DOM元素所对应的文档节点上的属性。
+应用版本不同：
+attr()是jQuery1.0版本就有的函数，而prop()是jQuery1.6版本新增的函数。
+用于设置的属性值类型不同：
+attr()设置属性值只能是：字符窜类型。
+prop()设置的属性值可以是包括数组和对象在内的任意类型。
+
+
+4/ addClass()
+用于为当前对象所匹配的每一个元素添加指定的css类名。
+
+jQueryObject.addClass( className )
+
+addClass()还会为函数传入两个参数：
+第一个参数就是该元素在匹配元素中的索引，
+第二个参数就是该元素节点当前的“class”属性值。
+
+
+5/ removeClass()
+用于移除当前对象所匹配的每一个元素上指定的css类名。
+
+jQueryObject.removeClass( className )
+
+
+6/ toggleClass()
+用于切换当前对象所匹配的每一个元素上指定的css类名。
+所谓“切换”,就是如果该元素上已存在指定的类名，则移除掉；
+如果不存在，则添加该类名。
+
+jQueryObject.toggleClass( classNames [,switch] )
+参数switch用于指定是只添加还是只移除指定的css类名。
+
+</pre>
+
+			</div>
+			
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>prototype和_proto_</h3>-->
+<pre>
+7/ html()
+用于设置或返回当前对象所匹配的DOM元素内的html内容。
+该函数的用途相当于设置或获取DOM元素的innerHTML属性值。
+jQueryObject.html( [htmlString] )
+
+如果没有指定htmlString参数，则表示获取第一个匹配元素的html内容。
+如果指定了htmlString参数，则表示设置所有匹配元素的html内容。
+
+
+8/ text()
+用于设置或返回当前对象所匹配的DOM元素内的text内容
+
+所谓text内容，就是在该元素的html内容（即innerHTML属性值）的基础上
+过滤掉所有HTML标记后的文本内容。
+如果jQuery对象匹配的元素不止一个，则text()返回合并了每个匹配元素
+(包含其后代元素)中的文本内容后的字符串。
+
+jQueryObject.text( [textString] )
+如果没有指定textString参数，则表示获取第一个匹配元素的text内容。
+如果指定了textString参数，则表示设置所有匹配元素的text内容。
+
+
+9/ val()
+用于 设置或返回当前对象所匹配的DOM元素的value值。
+
+该函数常用于设置或获取表单元素的value属性值。
+jQueryObject.val( [values] )
+
+如果没有指定values参数，则表示获取第一个匹配元素的value值。
+如果指定了value参数，则表示设置所有匹配元素的value值。
+</pre>
+
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<pre>
+10/ append()
+用于向每个匹配元素内部的末尾位置追加指定的内容。
+指定的内容可以是：html字符串、DOM元素(或数组)、jQuery对象、函数(返回值)
+
+jQueryObject.append( content1 [,contentN])
+append()可以将多个参数所表示的内容依次追加到 每个匹配元素
+内部的末尾位置。如果参数为字符串类型，则将其视作html字符串。
+
+注意：
+如果追加的内容是当前页面中的某些元素，那么这些元素将从原来
+位置上消失。这就相当于一个移动操作，而不是复制操作。
+
+
+11/ appendTo()
+用于将当前所有匹配元素追加到指定元素内部的末尾位置。
+
+jQueryObject.appendTo( target )
+
+
+12/ prepend()
+用于向每个匹配元素内部的起始位置追加指定的内容。
+指定的内容可以是：html字符串、DOM元素(或数组)、jQuery对象、函数(返回值)
+
+jQueryObject.prepend( content1 [,contentN])
+prepend()可以将多个参数所表示的内容依次追加到 每个匹配元素
+内部的起始位置。如果参数为字符串类型，则将其视作html字符串。
+
+注意：
+如果追加的内容是当前页面中的某些元素，那么这些元素将从原来
+位置上消失。这就相当于一个移动操作，而不是复制操作。
+</pre>
+		</div>	
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+
+<!--<h4>jQuery选择器</h4>-->
+<pre>
+13/ prependTo()
+用于将当前所有匹配元素追加到指定元素内部的起始位置。
+
+jQueryObject.prependTo( target )
+	
+
+14/ after()
+用于在每个匹配元素之后插入指定的内容（同级）
+
+jQueryObject.after( content1 [,contentN])
+
+
+15/ before()
+用于在每个匹配元素之前插入指定的内容。
+
+jQueryObject.before( content1 [,contentN])
+
+
+16/ insertAfter()
+用于将当前所有匹配元素插入到指定元素之后。
+	
+jQueryObject.insertAfter( target )
+
+
+17/ insertBefore()
+用于将当前所有匹配元素插入到指定元素之前。
+	
+jQueryObject.insertBefore( target )
+
+
+18/ wrap()
+用于在每个匹配元素外部包裹指定的HTML结构
+
+jQueryObject.wrap( wrapper )
+注意：
+如果wrapper匹配多个元素，则只将第一个元素作为包裹元素	
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<pre>
+19/ unwrap()
+用于移除每个匹配元素的父元素
+但会保留其所有的后辈元素。
+
+jQueryObject.unwrap()
+如果当前匹配元素的父元素是body元素，则不会移除body元素
+
+
+20/ wrapAll()
+用于在所有匹配元素用单个元素包裹起来。
+
+jQueryObject.wrapAll( wrapper )
+
+
+21/ wrapInner()
+用于在每个匹配元素的所有子节点外部包裹指定的HTML结构
+这里的所有子节点包括文本节点、注释节点等任意类型的节点。
+
+jQueryObject.wrapInner( wrapper )
+	
+	
+22/ replaceAll()
+用于使用当前匹配元素替换掉所有的目标元素。
+
+jQueryObject.replaceAll( target )
+
+
+23/ replaceWith()
+用于使用指定的元素替换每个匹配的元素
+
+jQueryObject.replaceWith( replacement )
+
+
+24/ empty()
+用于清空每个匹配元素内的所有内容
+empty()函数将会移除每个匹配元素的所有子节点(包括文本节点、
+注释节点等所有类型的节点)
+
+jQueryObject.empty()
+</pre>
+		</div>	
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+<!--<h4>jQuery选择器</h4>-->
+<pre>
+25/ remove()
+用于从文档中移除匹配的元素
+
+jQueryObject.remove( [selector] )
+与detach()相比,remove()函数会同时移除与元素关联绑定的
+附加数据（data()函数）和事件处理器等(detach()会保留)
+
+
+26/ detach()
+用于从文档中移除匹配的元素
+
+jQueryObject.detach( [selector] )
+
+
+27/ clone()
+用于克隆当前匹配元素集合的一个副本
+并以jQuery对象的形式返回。
+
+jQueryObject.clone()
+
+
+28/ css()
+用于设置或返回当前对象所匹配的元素的css样式属性值。
+如果需要删除指定的css属性，请使用该函数将其值设为
+空字符串（""）
+
+jQueryObject.css( propertyName [,value] )
+如果指定了value参数，则表示设置css属性propertyName的值为value
+如果没有指定参数value，则表示返回css属性propertyName的值。
+
+jQueryObject.css( object )
+以对象形式同时设置任意多个属性的值。对象object的每个属性对应
+propertyName ,属性的值对应value。
+	
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<pre>
+29/ offset()
+用于设置或返回当前匹配元素相对于当前文档的偏移，也就是相对于
+当前文档的坐标。
+该函数只对可见元素有效。
+
+该函数返回一个坐标对象,该对象有一个left属性和top属性。
+属性值均为数字，他们都以像素px为单位。
+
+jQueryObject.offset( [coordinates] )
+
+注意：
+如果省略了coordinates 参数，则表示获取偏移位置；
+如果指定了该参数，则表示设置偏移位置
+
+
+30/ position()
+用于返回当前匹配元素相对于其被定位的祖辈元素的偏移，也就是
+相对于被定位的祖辈元素的坐标。
+该函数只对可见元素有效。
+
+该函数返回一个坐标对象,该对象有一个left属性和top属性。
+属性值均为数字，他们都以像素px为单位。
+
+jQueryObject.position( )
+</pre>
+		</div>	
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+
+<!--<h4>jQuery选择器</h4>-->
+<pre>
+31/ scrollLeft()
+用于设置或返回当前匹配元素相对于水平滚动条左侧的偏移
+
+当一个元素的实际宽度超过其显示区域的宽度时，在一定的设置下，浏览器
+会为该元素显示相应的水平滚动条。此时，scrollLeft()返回的就是该元素
+在可见的滚动区域左侧被隐藏部分的宽度
+
+如果水平滚动条在最左侧（也就是可见区域左侧没有被隐藏的内容），或者
+当前元素是不可水平滚动的，那么scrollLeft()将返回 0。
+
+jQueryObject.scrollLeft( [value] )
+
+
+32/ scrolltop()
+用于设置或 返回当前匹配元素相对于垂直滚动条顶部的偏移
+
+jQueryObject.scrollTop( [value] )
+
+
+33/ height() / width()
+用于设置或返回当前匹配元素的高度
+该高度值不包括元素的外边距margin、内边距padding、边框border等
+部分的高度
+
+jQueryObject.height( [value] )
+
+
+34/ innerHeight() / innerWidth()
+用于设置或返回当前匹配元素的内高度
+内高度包括元素的内边距padding，但不包括外边距margin、
+边框border等部分的高度
+
+jQueryObject.innerHeight( [value] )
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<pre>
+35/ outerHeight() / outerWiidth()
+用于获取当前匹配元素的外高度
+外高度包括元素的内边距padding、边框border，但不包括外边距margin、
+等部分的高度。
+但是如果指定参数为true，则包括了margin部分的高度
+
+jQueryObject.outerHeight( [value] )
+
+
+36/ show()
+用于显示所有匹配的元素
+此外，可以指定元素显示的过渡动画效果。
+如果元素本身是可见的，则不作任何改变。
+如果是隐藏的，则使其可见。
+
+jQueryObject.show( "fast" / "slow" / 数值 )
+
+
+37/ hide()
+用于隐藏所有匹配的元素
+此外，可以指定元素隐藏的过渡动画效果。
+如果元素本身是不可见的，则对其不作任何改变。
+如果元素是可见的，则将其隐藏。
+
+jQueryObject.hide( "fast" / "slow" / 数值 )
+
+
+38/ toggle()
+用于切换所有匹配的元素
+此外，可以指定元素切换的过渡动画效果。
+所谓“切换”,也就是如果元素当前是可见的，则将其隐藏；
+如果元素当前是隐藏的，则使其显示。
+
+jQueryObject.toggle( "fast" / "slow" / 数值 )
+
+
+
+</pre>
+		</div>	
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+
+<!--<h4>jQuery选择器</h4>-->
+<pre>
+39/ sildeDown()
+用于显示所有匹配的元素，并带有向下滑动的过渡动画效果。
+向下的滑动效果，即元素可见区域的高度从0逐渐增大到其
+原有高度（向下逐渐展开）
+
+jQueryObject.sildeDown( "fast" / "slow" / 数值 )
+
+
+40/ sildeUp()
+用于隐藏所有匹配的元素，并带有向上滑动的过渡动画效果。
+向上的滑动效果，即元素可见区域的高度从原有高度逐渐减小
+到 0 （向上逐渐收起）
+
+jQueryObject.sildeUp( "fast" / "slow" / 数值 )
+
+
+41/ sildeToggle()
+用于切换所有匹配的元素，并带有滑动的过渡动画效果。
+所谓“切换”，也就是如果元素当前是可见的，则将其隐藏
+(向上滑动);如果元素当前是隐藏的，则使其显示(向下滑动)
+
+jQueryObject.sildeToggle( "fast" / "slow" / 数值 )
+
+
+42/ fadeIn()
+用于显示所有匹配的元素，并带有淡入的过渡动画效果
+即元素的不透明度的比例从0%逐渐增加到100%
+
+jQueryObject.fadeIn( "fast" / "slow" / 数值 )
+
+
+43/ fadeOut()
+用于隐藏所有匹配的元素，并带有淡出的过渡动画效果
+即元素的不透明度的比例从100%逐渐增加到0%
+
+jQueryObject.fadeOut( "fast" / "slow" / 数值 )
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<pre>
+44/ fadeToggle()
+用于切换所有匹配的元素，并带有淡入/淡出的过渡动画效果
+所谓“切换”，即如果元素当前是可见的，则将其隐藏（淡出）;
+如果元素当前是隐藏的，则使其显示(淡入)
+
+jQueryObject.fadeToggle( "fast" / "slow" / 数值 )
+
+
+
+45/ animate()
+用于执行一个基于css属性的自定义动画
+你可以为匹配的元素设置css样式，animate()函数将会执行
+一个从当前样式到指定的css样式的一个过渡动画。
+
+jQueryObject.animate(  )
+
+
+46/ stop()
+用于停止当前匹配元素上正在运行的动画
+
+jQueryObject.stop(  )
+</pre>
+		</div>	
+		</div>
+	</body>
+</html>
