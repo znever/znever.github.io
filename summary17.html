@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>个人小结20161229</title>
+		<style type="text/css">
+			body{
+				background:url("http://image18.poco.cn/mypoco/myphoto/20161211/21/18416238120161211210209047.jpg?");
+				background-position:center 0; background-attachment: fixed;
+			}
+			.box{ width:1100px; height:600px; border:1px solid #DAF8FF; margin:50px auto 0; border-radius:10px;}
+			.leftbar,.rightbar{ width:545px; height:600px;}
+			.leftbar{float:left;}
+			.rightbar{float:right; }
+			h3,h4,li{ color:#d4faff;margin-left:20px;}
+			.verbar{width:1px; height:540px; background:#DAF8FF; float:left; margin:30px auto 0;}
+			p{ color:#d4faff; padding:0 20px; line-height: 30px;}
+			pre{color:#00e1ff;}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;">
+				<!--<h3>html5 video</h3>-->
+				<h4>AJAX数据提交及查询</h4>
+<pre>
+var _data = {};
+	_data.name = user;
+	_data.sex = sex;
+	_data.birthday = _str;
+	_data.mobile = phone;
+	_data.political = selp;
+	_data.qq = qq;
+	_data.college = college;
+	_data.faculty = pol;
+	_data.major = major;
+	_data.fatherName = father;
+	_data.fatherMobile = fatherMobile;
+	_data.matherName = mather;
+	_data.matherMobile = matherMobile;
+	_data.homeAddress = address;
+	_data.source = info;
+	_data.majorMemo = majorDes;
+	_data.selfMemo = selfDes;
+					
+					
+		var _url = "http://www.hemijiaoyu.com/service/addApply";
+					
+		$.ajax({
+			type:"post",
+			url:_url,
+			dataType:"text",
+			data:_data,
+			success:function(msg){
+				console.log(msg)
+				alert("数据提交成功！");
+			},
+			error:function(error){
+				alert("数据提交失败！");
+			}
+		});
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<h4></h4>
+<pre>
+提交数据的类型为post
+
+
+//获取性别
+var sex = $("#sex option:checked").text();
+
+
+//获取政治面貌
+var selp = $("#sel option:checked").text();
+
+
+//获取信息来源
+var info = $("#sel input[name='info']:checked").val();
+
+
+//正则验证手机格式
+var reg =  /^(13[\d]{9}|15[\d]{9}|18[\d]{9})$/;
+var phone = $("#phone").val();	//获取手机号码
+if(!reg.test(phone)){
+	alert("手机号码格式不对！");
+	return false;
+}
+
+
+//验证qq
+var qqL = /^\d{6,11}$/;
+var qq = $("#qq").val();	//获取qq
+	if( !qqL.test(qq)){
+		alert("qq账号不存在！");
+		return false;
+	}
+</pre>
+
+			</div>
+			
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>prototype和_proto_</h3>-->
+<pre>
+	
+</pre>
+
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<pre>
+
+</pre>
+		</div>	
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+
+<!--<h4>jQuery选择器</h4>-->
+<pre>
+
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<pre>
+
+</pre>
+		</div>	
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+<!--<h4>jQuery选择器</h4>-->
+<pre>
+
+	
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<pre>
+
+</pre>
+		</div>	
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+
+<!--<h4>jQuery选择器</h4>-->
+<pre>
+
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<pre>
+
+
+
+</pre>
+		</div>	
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+
+<!--<h4>jQuery选择器</h4>-->
+<pre>
+
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<pre>
+
+</pre>
+		</div>	
+		</div>
+	</body>
+</html>
