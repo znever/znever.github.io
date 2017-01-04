@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>个人小结20170104</title>
+		<style type="text/css">
+			body{
+				background:url("http://image18.poco.cn/mypoco/myphoto/20161211/21/18416238120161211210209047.jpg?");
+				background-position:center 0; background-attachment: fixed;
+			}
+			.box{ width:1100px; height:600px; border:1px solid #DAF8FF; margin:50px auto 0; border-radius:10px;}
+			.leftbar,.rightbar{ width:545px; height:600px;}
+			.leftbar{float:left;}
+			.rightbar{float:right; }
+			h3,h4,li{ color:#d4faff;margin-left:20px;}
+			.verbar{width:1px; height:540px; background:#DAF8FF; float:left; margin:30px auto 0;}
+			p{ color:#d4faff; padding:0 20px; line-height: 30px;}
+			pre{color:#00e1ff;}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;">
+				<!--<h3>html5 video</h3>-->
+				<h4>HTML5</h4>
+<pre>
+	&lt;header>
+		定义文档的页眉
+		&lt;h1>&lt;/h1>
+		&lt;p>&lt;/p>
+	&lt;/header>
+	
+	&lt;nav>
+		定义导航链接的部分
+		&lt;a href="#">首页&lt;/a>
+		&lt;a href="#">产品页&lt;/a>
+		&lt;a href="#">公司介绍&lt;/a>
+		&lt;a href="#">联系我们&lt;/a>
+	&lt;/nav>
+	
+	&lt;section>
+	定义文档中的节（section、区段）。比如章节、页眉、页脚
+	或文档中的其他部分。
+		&lt;article>
+			&lt;h1>标题一&lt;/h1>
+			&lt;p>文章内容&lt;/p>
+		&lt;/article>
+		&lt;article>
+			&lt;h1>标题二&lt;/h1>
+			&lt;p>文章内容&lt;/p>
+		&lt;/article>
+	&lt;/section>
+	
+	&lt;aside>
+	定义其所处内容之外的内容
+	aside 的内容应该与附近的内容相关
+		&lt;h1>标题三&lt;/h1>
+		&lt;p>文章内容&lt;/p>
+	&lt;/aside>
+	
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<!--<h4>全局jQuery.each()函数</h4>-->
+<pre>
+	&lt;footer>
+	定义文档或节的页脚
+	应当含有其包含元素的信息。
+	页脚通常包含文档的作者、版权信息、使用条款链接、联系信息等等。
+	可以在一个文档中使用多个&lt;footer> 元素。
+		页尾
+	&lt;/footer>
+</pre>
+<h4>getCurrentPosition() 方法来获得用户的位置</h4>
+<pre>
+	var x=document.getElementById("demo"); 
+function getLocation() 
+{ 
+    if (navigator.geolocation) 
+    { 
+        navigator.geolocation.getCurrentPosition(showPosition); 
+    } 
+    else 
+    { 
+        x.innerHTML="该浏览器不支持获取地理位置。"; 
+    } 
+} 
+
+function showPosition(position) 
+{ 
+    x.innerHTML="纬度: " + position.coords.latitude + 
+    "&lt;br>经度: " + position.coords.longitude;     
+}
+
+
+
+Permission denied - 用户不允许地理定位
+
+Position unavailable - 无法获取当前位置
+
+Timeout - 操作超时
+</pre>
+			</div>
+			
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>prototype和_proto_</h3>-->
+<pre>
+	coords.latitude   十进制数的纬度
+	coords.longitude   十进制数的经度
+	coords.accuracy    位置精度
+	coords.altitude    海拔，海平面以上以米计
+	coords.altitudeAccuracy    位置的海拔精度
+	coords.heading    方向，从正北开始以度计
+	coords.speed     速度，以米/每秒计
+	timestamp    响应的日期/时间
+</pre>
+
+<h4>数据库——增删改查</h4>
+<pre>
+	1、增
+	insert into <表名>（列明） values(列值)
+		
+例：insert into Strdents (姓名,性别,出生日期) values ('开心朋朋','男','1980/6/15')
+
+	
+	2、删
+	delete from <表名> [where <删除条件>]
+
+例：delete from Strdents where name='开心朋朋'（删除表Strdents中列值为开心朋朋的行）
+
+
+	3、改
+	update <表名> set <列名=更新值> [where <更新条件>]
+
+例：update tongxunlu set 年龄=18 where 姓名='蓝色小名'
+
+
+	4、查
+	select <列名> from <表名> [where <查询条件表达式>] [order by <排序的列名>][asc或desc]
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<pre>
+
+</pre>
+		</div>	
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+
+<!--<h4>jQuery选择器</h4>-->
+<pre>
+
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<pre>
+
+</pre>
+		</div>	
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+<!--<h4>jQuery选择器</h4>-->
+<pre>
+
+	
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<pre>
+
+</pre>
+		</div>	
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+
+<!--<h4>jQuery选择器</h4>-->
+<pre>
+
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<pre>
+
+
+
+</pre>
+		</div>	
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+
+<!--<h4>jQuery选择器</h4>-->
+<pre>
+
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<pre>
+
+</pre>
+		</div>	
+		</div>
+	</body>
+</html>
