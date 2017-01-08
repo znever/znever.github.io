@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>个人小结20170106</title>
+		<style type="text/css">
+			body{
+				background:url("http://image18.poco.cn/mypoco/myphoto/20161211/21/18416238120161211210209047.jpg?");
+				background-position:center 0; background-attachment: fixed;
+			}
+			.box{ width:1100px; height:600px; border:1px solid #DAF8FF; margin:50px auto 0; border-radius:10px;}
+			.leftbar,.rightbar{ width:545px; height:600px;}
+			.leftbar{float:left;}
+			.rightbar{float:right; }
+			h3,h4,li{ color:#d4faff;margin-left:20px;}
+			.verbar{width:1px; height:540px; background:#DAF8FF; float:left; margin:30px auto 0;}
+			p{ color:#d4faff; padding:0 20px; line-height: 30px;}
+			pre{color:#00e1ff;}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;">
+				<!--<h3>html5 video</h3>-->
+				<h4>css3文字镂空效果</h4>
+<pre>
+	p{
+		font-size:40px;
+		-webkit-text-fill-color: transparent;
+		-webkit-text-stroke: 1px #000;
+	}
+	
+</pre>
+
+<h4>手风琴效果</h4>
+<pre>
+$(function () {
+$(".wrap > ul > li").each(function(i,ele){
+$(this).css("background","url(img/0" + (i + 1) +".jpg)") //这里的this就相当于参数ele
+}).mouseenter(function(){
+$(this).stop().animate({"width":600},500).siblings().stop().animate({"width":100},300)
+}).mouseleave(function(){
+$(".wrap > ul > li").stop().animate({"width":200},300)
+})
+})
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<h4>伪类和伪元素之间的区别</h4>
+<pre>
+	css伪类用于向某些选择器添加特殊的效果
+	
+	css伪元素用于将特殊的效果添加到某些选择器。
+	
+	
+	伪类种类：
+:active 	将样式添加到被激活的元素
+:focus 		将样式添加到被选中的元素
+:hover 		当鼠标悬浮在元素上方时，向元素添加样式
+:link 		将特殊的样式添加到未被访问过的链接
+:visited 	将特殊的样式添加到被访问过的链接
+:first-child 	将特殊的样式添加到元素的第一个子元素
+:lang 		允许创作者来定义指定的元素中使用的语言
+
+
+	伪元素种类
+:first-letter 	将特殊的样式添加到文本的首字母
+:first-line 	将特殊的样式添加到文本的首行
+:before 		在某元素之前插入某些内容
+:after 			在某元素之后插入某些内容
+</pre>
+<!--<h4>getCurrentPosition() 方法来获得用户的位置</h4>-->
+<pre>
+	
+
+
+
+
+</pre>
+			</div>
+			
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>prototype和_proto_</h3>-->
+<pre>
+	
+	
+</pre>
+
+<!--<h4>数据库——增删改查</h4>-->
+<pre>
+	
+
+
+	
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<pre>
+
+</pre>
+		</div>	
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+
+<!--<h4>jQuery选择器</h4>-->
+<pre>
+
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<pre>
+
+</pre>
+		</div>	
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+<!--<h4>jQuery选择器</h4>-->
+<pre>
+
+	
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<pre>
+
+</pre>
+		</div>	
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+
+<!--<h4>jQuery选择器</h4>-->
+<pre>
+
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<pre>
+
+
+
+</pre>
+		</div>	
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+
+<!--<h4>jQuery选择器</h4>-->
+<pre>
+
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<pre>
+
+</pre>
+		</div>	
+		</div>
+	</body>
+</html>
