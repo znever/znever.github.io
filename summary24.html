@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>个人小结20170110</title>
+		<style type="text/css">
+			body{
+				background:url("http://image18.poco.cn/mypoco/myphoto/20161211/21/18416238120161211210209047.jpg?");
+				background-position:center 0; background-attachment: fixed;
+			}
+			.box{ width:1100px; height:600px; border:1px solid #DAF8FF; margin:50px auto 0; border-radius:10px;}
+			.leftbar,.rightbar{ width:545px; height:600px;}
+			.leftbar{float:left;}
+			.rightbar{float:right; }
+			h3,h4,li{ color:#d4faff;margin-left:20px;}
+			.verbar{width:1px; height:540px; background:#DAF8FF; float:left; margin:30px auto 0;}
+			p{ color:#d4faff; padding:0 20px; line-height: 30px;}
+			pre{color:#00e1ff;}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;">
+				<!--<h3>html5 video</h3>-->
+				<h4>响应式布局</h4>
+<p>
+	html5/css3响应式布局：利用css3的media query媒体查询功能。移动终端一般
+		都是对css3支持比较好的高级浏览器，，所以在兼容性方面问题不大。幸
+</p>
+<p>
+	首先关于一个普通的自适应显示的三栏网页，当你用不同的终端来查看这个页面的时候，
+	他会根据几种终端来显示不同的样式，在电脑上是三列，在pad上应该也是三列，在大
+	屏手机上是三行，而在屏幕小于320px的手机上只显示主要内容，隐藏掉了次要元素。
+</p>
+<br />
+<h4>媒体属性 Media Features</h4>
+<p>
+	1、width：取值length,可以接受min/max,定义输出设备中的页面可见区域宽度。<br />
+	2、height：取值length，可以接受min/max,定义输出设备中的页面可见区域高度。<br />
+	3、device-width： 取值length，可以接受min/max,定义输出设备的屏幕可见宽度。<br />
+</p>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<!--<h4>自适应布局</h4>-->
+<p>
+	4、device-height： 取值length，可以接受min/max,定义输出设备的屏幕可见高度。<br />
+	5、orientation： 取值portrait/landscape，不可以接受min/max,定义"height"是否大于或等于"width"。
+	值portrait代表是，landscape代表否<br />
+	6、aspect-ratio： 取值ratio，可以接受min/max,定义"width"与"height"的比率。<br />
+	7、device-aspect-ratio： 取值ratio，可以接受min/max,定义"device-width"与"device-height"的比率。
+	如常见的显示器的比率：4/3 , 16/9 , 16/10<br />
+	8、color： 取值integer，可以接受min/max,定义每一组输出设备的彩色原件个数。如果不是彩色设备，则值等于0<br />
+	9、color-index： 取值integer，可以接受min/max,定义在输出设备的彩色查询表中的条目数。如果没有使用彩色查询表，则值等于0<br />
+	10、monochrome:  取值integer，可以接受min/max,定义在一个单色框架缓冲区中每像素包含的单色原件个数。
+	如果不是单色设备，则值等于0 <br />
+	11、resolution:  取值resolution，可以接受min/max,定义设备的分辨率。如96dpi ,300dpi , 118dpcm <br />
+</p>
+<!--<h4>流式布局</h4>-->
+ 
+			</div>
+			
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+<!--<h4>响应式布局</h4>-->
+<p>
+ 	12、scan: progressive | interlace,不可以接受min/max,定义电视类设备的扫描工序 <br />
+ 	13、grid：integer,不可以接受min/max,用来查询输出设备是否使用栅格或点阵。只有1和0才是有效值，
+ 	1代表是，0代表否
+ </p>
+<br />
+<!--<h4>弹性布局</h4>-->
+<p>
+<pre>
+在判断终端分辨率大小之后，赋予不同的样式进去，就像我们的例子里
+
+@media screen and (max-width : 320px){
+body{...}
+}
+@media screen and (min-width: 800px) and (max-width: 1024px){
+body{...}
+}
+至于要判断多少种分辨率，完全取决于你产品的需求，常见的分辨率有手机，平板
+（注意这些终端是存在 横屏 竖屏 区别的,这个下一篇里提），桌面显示器。自己为
+自己所面对的终端定制样式。
+</pre>
+</p>
+<p>
+	&lt;meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+</p>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<p>
+	
+</p>
+
+<p>
+
+</p>
+		</div>	
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+
+<!--<h4>弹性布局详解</h4>-->
+<!--<h3>以下6个属性设置在容器上</h3>-->
+<p>
+	
+<pre>
+
+</pre>
+</p>
+<p>
+	
+<pre>
+
+</pre>
+</p>
+<p>
+	
+<pre>
+
+</pre>
+</p>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<p>
+	
+<pre>
+
+</pre>
+</p>
+<p>
+	
+<pre>
+
+</pre>
+</p>
+<p>
+	
+<pre>
+
+</pre>
+</p>
+		</div>	
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+<!--<h4>以下6个属性设置在项目上</h4>-->
+<p>
+	
+<pre>
+
+</pre>
+</p>
+<p>
+	
+<pre>
+
+</pre>
+</p>
+<p>
+	
+<pre>
+
+</pre>
+</p>
+
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<p>
+	
+<pre>
+
+</pre>
+</p>
+<p>
+	
+<pre>
+
+</pre>
+</p>
+<p>
+	
+<pre>
+
+</pre>
+</p>
+		</div>	
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+
+<!--<h4>jQuery选择器</h4>-->
+<pre>
+
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<pre>
+
+
+
+</pre>
+		</div>	
+		</div>
+		
+		<div class="box">
+			<div class="leftbar" style="width:505px; padding:0 20px;position:relative;">
+				<!--<h3>JavaScript编码规范</h3>-->
+
+<!--<h4>jQuery选择器</h4>-->
+<pre>
+
+</pre>
+			</div>
+			<div class="verbar"></div>
+			<div class="rightbar" style="padding:0 20px; width:505px;">
+<pre>
+
+</pre>
+		</div>	
+		</div>
+	</body>
+</html>
